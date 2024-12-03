@@ -1,3 +1,3 @@
-# try-wagtail
+# mycms
 
-Describe your project here.
+My CMS

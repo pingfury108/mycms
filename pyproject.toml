@@ -1,7 +1,7 @@
 [project]
-name = "try-wagtail"
+name = "mycms"
 version = "0.1.0"
-description = "Add your description here"
+description = "MyCMS"
 authors = [
     { name = "pingfury", email = "pingfury@outlook.com" }
 ]
@@ -24,4 +24,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/try_wagtail"]
+packages = ["src/mycms"]
