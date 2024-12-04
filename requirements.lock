@@ -14,6 +14,7 @@ anyascii==0.3.2
     # via wagtail
 asgiref==3.8.1
     # via django
+    # via django-browser-reload
 beautifulsoup4==4.12.3
     # via wagtail
 certifi==2024.8.30
@@ -23,15 +24,19 @@ charset-normalizer==3.4.0
 defusedxml==0.7.1
     # via willow
 django==5.1.3
+    # via django-browser-reload
     # via django-filter
     # via django-modelcluster
     # via django-permissionedforms
     # via django-taggit
+    # via django-tailwind
     # via django-treebeard
     # via djangorestframework
     # via laces
-    # via try-wagtail
+    # via mycms
     # via wagtail
+django-browser-reload==1.17.0
+    # via django-tailwind
 django-filter==24.3
     # via wagtail
 django-modelcluster==6.3
@@ -40,6 +45,8 @@ django-permissionedforms==0.1
     # via wagtail
 django-taggit==6.1.0
     # via wagtail
+django-tailwind==3.8.0
+    # via mycms
 django-treebeard==4.7.1
     # via wagtail
 djangorestframework==3.15.2
@@ -63,6 +70,8 @@ pillow==11.0.0
     # via wagtail
 pillow-heif==0.21.0
     # via willow
+pip==24.3.1
+    # via mycms
 pytz==2024.2
     # via django-modelcluster
     # via l18n
@@ -79,6 +88,6 @@ telepath==0.3.1
 urllib3==2.2.3
     # via requests
 wagtail==6.3.1
-    # via try-wagtail
+    # via mycms
 willow==1.9.0
     # via wagtail
