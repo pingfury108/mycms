@@ -196,3 +196,5 @@ WAGTAILDOCS_EXTENSIONS = [
 
 
 TAILWIND_APP_NAME = "theme"
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

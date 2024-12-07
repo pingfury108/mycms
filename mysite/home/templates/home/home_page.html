@@ -8,6 +8,8 @@
 
 {% block content %}
 
+{% load wagtailimages_tags %}
+
 <section class="bg-[#bed5ff] py-8">
     <div class="container mx-auto text-center h-96 flex justify-center items-center">
         <h2 class="text-2xl font-semibold text-[#1d2668]">为客户创造可持续价值,让客户的利益最大化</h2>
@@ -17,26 +19,13 @@
 <section class="py-16">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {% for child in page.child_all.all %}
             <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold mb-4">品牌宣传册设计</h3>
+                <h3 class="text-xl font-bold mb-4">{{ child.title }}</h3>
                 <hr class="border-gray-300 mb-4">
-                <p class="text-gray-600">品牌形象塑造画册，企业文化画册，集团宣传画册</p>
+                <p class="text-gray-600">{{ child.describe }}</p>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold mb-4">产品宣传册设计</h3>
-                <hr class="border-gray-300 mb-4">
-                <p class="text-gray-600">技术服务画册，工程案例宣传画册，产品招商手册</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold mb-4">周年纪念册策划</h3>
-                <hr class="border-gray-300 mb-4">
-                <p class="text-gray-600">周年庆纪念画册，项目竣工/开幕纪念画册，人物纪念画册</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold text-blue-600 mb-4">会议手册设计</h3>
-                <hr class="border-blue-300 mb-4">
-                <p class="text-blue-600">会议活动画面册，会展宣传册</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -45,120 +34,18 @@
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-8">金属品牌创意--国内领先的宣传策划与视觉设计公司</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for gallery_image in page.gallery_images.all %}
+                {% image gallery_image.image fill-300x200 as img %}
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image1.jpg" alt="作品1" class="w-full h-64 object-cover">
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" />
                     <div class="p-4">
-                        <h4 class="text-lg font-semibold">教育培训类品牌设计</h4>
-                        <p class="text-gray-600">教育培训类品牌设计，提升品牌形象与市场竞争力。</p>
+                        <h4 class="text-lg font-semibold">{{ gallery_image.caption }}</h4>
+                        <p class="text-gray-600">{{ gallery_image.describe }}</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image2.jpg" alt="作品2" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">产品宣传册设计</h4>
-                        <p class="text-gray-600">产品宣传册设计，展示产品特点与优势。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image3.jpg" alt="作品3" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">会议手册设计</h4>
-                        <p class="text-gray-600">会议手册设计，提升会议专业形象。</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image1.jpg" alt="作品1" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">教育培训类品牌设计</h4>
-                        <p class="text-gray-600">教育培训类品牌设计，提升品牌形象与市场竞争力。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image2.jpg" alt="作品2" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">产品宣传册设计</h4>
-                        <p class="text-gray-600">产品宣传册设计，展示产品特点与优势。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image3.jpg" alt="作品3" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">会议手册设计</h4>
-                        <p class="text-gray-600">会议手册设计，提升会议专业形象。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image1.jpg" alt="作品1" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">教育培训类品牌设计</h4>
-                        <p class="text-gray-600">教育培训类品牌设计，提升品牌形象与市场竞争力。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image2.jpg" alt="作品2" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">产品宣传册设计</h4>
-                        <p class="text-gray-600">产品宣传册设计，展示产品特点与优势。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image3.jpg" alt="作品3" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">会议手册设计</h4>
-                        <p class="text-gray-600">会议手册设计，提升会议专业形象。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image1.jpg" alt="作品1" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">教育培训类品牌设计</h4>
-                        <p class="text-gray-600">教育培训类品牌设计，提升品牌形象与市场竞争力。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image2.jpg" alt="作品2" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">产品宣传册设计</h4>
-                        <p class="text-gray-600">产品宣传册设计，展示产品特点与优势。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image3.jpg" alt="作品3" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">会议手册设计</h4>
-                        <p class="text-gray-600">会议手册设计，提升会议专业形象。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image1.jpg" alt="作品1" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">教育培训类品牌设计</h4>
-                        <p class="text-gray-600">教育培训类品牌设计，提升品牌形象与市场竞争力。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image2.jpg" alt="作品2" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">产品宣传册设计</h4>
-                        <p class="text-gray-600">产品宣传册设计，展示产品特点与优势。</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="image3.jpg" alt="作品3" class="w-full h-64 object-cover">
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">会议手册设计</h4>
-                        <p class="text-gray-600">会议手册设计，提升会议专业形象。</p>
-                    </div>
-                </div>
-            </div>
+
     </div>
 </section>
 
