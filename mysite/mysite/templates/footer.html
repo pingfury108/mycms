@@ -1,3 +1,5 @@
+{% load wagtailcore_tags %}
+
 <section class="bg-pink-200 py-8 bg-[#e9bba6] h-80 flex justify-center items-center">
     <div class="container mx-auto text-center text-[#1d2668] text-2xl">
         <p class="mb-4">每个梦想,我们都将载力相助<br>
@@ -11,19 +13,43 @@
         <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
         <div class="grid grid-cols-2 md:grid-cols-6">
             <div class="col-span-2">
-                <h2 class="text-2xl font-bold mb-2">JINACD BRAND</h2>
+                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
             </div>
             <div class="">
-                <h4 class="text-lg font-semibold mb-4">行业案例</h4>
+                <h4 class="text-lg font-semibold mb-4">
+                    {% if industry_cases_page %}
+                    <a href="{% pageurl industry_cases_page %}">行业案例</a>
+                    {% else %}
+                    <a>行业案例</a>
+                    {% endif %}
+                </h4>
             </div>
             <div>
-                <h4 class="text-lg font-semibold mb-4">文案策划</h4>
+                <h4 class="text-lg font-semibold mb-4">
+                    {% if copywriter_page %}
+                    <a href="{% pageurl copywriter_page %}">文案策划</a>
+                    {% else %}
+                    <a>文案策划</a>
+                    {% endif %}
+                </h4>
             </div>
             <div>
-                <h4 class="text-lg font-semibold mb-4">品牌设计</h4>
+                <h4 class="text-lg font-semibold mb-4">
+                    {% if brand_design_page %}
+                    <a href="{% pageurl brand_design_page %}">品牌设计</a>
+                    {% else %}
+                    <a>品牌设计</a>
+                    {% endif %}
+                </h4>
             </div>
             <div>
-                <h4 class="text-lg font-semibold mb-4">会议策划</h4>
+                <h4 class="text-lg font-semibold mb-4">
+                    {% if meeting_planning_page %}
+                    <a href="{% pageurl meeting_planning_page %}">会议策划</a>
+                    {% else %}
+                    <a>会议策划</a>
+                    {% endif %}
+                </h4>
             </div>
         </div>
         <hr class="my-8">
