@@ -3,9 +3,65 @@
 {% load static %}
 
 {% block extra_css %}
-
 {% endblock extra_css %}
 
 {% block content %}
+<div class="container mx-auto px-4">
+    <!-- 主标题 -->
+    <div class="text-center py-16">
+        <h1 class="text-[#1a237e] text-5xl font-bold mb-8">G-EAGLE DESIGN</h1>
+        <p class="text-gray-600 text-lg">专业提供最佳的设计，为了客户的成功而努力</p>
+    </div>
 
+    <!-- 服务类型 -->
+    <div class="grid grid-cols-4 gap-6 mb-16">
+        <div class="bg-white p-4 text-center shadow-md">
+            <h3 class="text-lg font-semibold">周年纪念册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md">
+            <h3 class="text-lg font-semibold">企业宣传册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md">
+            <h3 class="text-lg font-semibold">产品画册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md">
+            <h3 class="text-lg font-semibold">印刷制作</h3>
+        </div>
+    </div>
+
+    <!-- 作品展示区 -->
+    <div class="grid grid-cols-2 gap-8 mb-16">
+        <!-- 左侧案例展示 -->
+        <div class="space-y-4">
+            <div class="bg-[#ffd700] p-6 rounded-lg">
+                <img src="{% static 'images/case1.jpg' %}" alt="案例" class="w-full">
+            </div>
+            <div class="bg-[#ffd700] p-6 rounded-lg">
+                <img src="{% static 'images/case2.jpg' %}" alt="案例" class="w-full">
+            </div>
+            <div class="bg-[#ffd700] p-6 rounded-lg">
+                <img src="{% static 'images/case3.jpg' %}" alt="案例" class="w-full">
+            </div>
+        </div>
+        <!-- 右侧项目描述 -->
+        <div class="bg-white p-8 rounded-lg">
+            <h3 class="text-xl font-bold mb-4">项目简介</h3>
+            <p class="text-gray-600 leading-relaxed">
+                企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
+                <!-- 这里可以根据实际内容补充更多文字 -->
+            </p>
+        </div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="text-center py-8 bg-gray-50 rounded-lg mb-16">
+        <h2 class="text-2xl font-bold mb-4">选择专业，让您更高效</h2>
+        <p class="text-xl text-[#1a237e]">制作流程咨询，请致电：</p>
+        <div class="text-2xl font-bold text-red-600 mt-2">
+            <span>010-6292 4170</span>
+            <span class="mx-4">|</span>
+            <span>1368 355 5200</span>
+        </div>
+    </div>
+</div>
 {% endblock content %}
