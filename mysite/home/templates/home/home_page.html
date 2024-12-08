@@ -10,45 +10,172 @@
 
 {% load wagtailimages_tags %}
 
-<section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center h-96 flex justify-center items-center">
-        <h2 class="text-2xl font-semibold text-[#1d2668]">为客户创造可持续价值,让客户的利益最大化</h2>
-    </div>
-</section>
+<section class="py-8 bg-[#fdbb01]">
 
-<section class="py-16">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {% for child in page.child_all.all %}
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold mb-4">{{ child.title }}</h3>
-                <hr class="border-gray-300 mb-4">
-                <p class="text-gray-600">{{ child.describe }}</p>
+    <div class="carousel w-full h-96">
+        <div id="slide1" class="carousel-item relative w-full">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-[#08117e]">
+                    <h2 class="text-2xl font-bold text-center">以视觉创意提升品牌价值为己任</h2>
+                    <p>积极开展与百强企业的战略合作</p>
+                    <p>也协助新兴品牌的崛起</p>
+                </div>
+
             </div>
-            {% endfor %}
+
+            <div class="absolute left-10 right-10 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide4" class="btn btn-circle">❮</a>
+                <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto grid grid-cols-4 h-32">
+        <div class="text-white bg-[#fdbb01]">
+            <p>服务内容</p>
+            <p>OUR SERVICES</p>
+        </div>
+        <div class="bg-[#f0d1c6] text-[#08117e]">
+            <h3>周年纪念册设计</h3>
+            <p>周年庆纪念册</p>
+            <p>人物纪念册</p>
+            <p>项目竣工/历程纪念册</p>
+        </div>
+        <div class="bg-[#0a117e] text-[#e8bdb2]">
+            <h3>会议活动策划设计</h3>
+            <p>周年会议主视觉创意设计</p>
+            <p>论坛\会议活动策划布置</p>
+            <p>年会\活动\会议手册</p>
+        </div>
+        <div class="text-[#08117e] bg-[#f0d1c6]">
+            <h3>企业宣传册设计</h3>
+            <p>集团\企业形象画册</p>
+            <p>企业文化宣传手册</p>
+            <p>产品宣传画册</p>
         </div>
     </div>
 </section>
 
-<section class="py-16">
-    <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-8">金属品牌创意--国内领先的宣传策划与视觉设计公司</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {% for gallery_image in page.gallery_images.all %}
-                {% image gallery_image.image fill-300x200 as img %}
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" />
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold">{{ gallery_image.caption }}</h4>
-                        <p class="text-gray-600">{{ gallery_image.describe }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
+<section class="py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">金鹰品牌创 × 品牌策略 × 视觉设计 = 操盘大品牌</h2>
+        <p class="text-lg mb-6">文案写作 + 画册设计 + 周年纪念册 + 会议活动 + 印刷制作</p>
+        <p class="text-gray-700 text-base">
+            以策略思维为先导，注重品牌长效发展，深度挖掘品牌核心价值，用美学创造价值，创作差异化视觉符号，持续创造品牌增值空间；公司汇聚品牌策划、文案写作、视觉设计等多学科专业人才，从策略分析到视觉设计，再到印刷制作，为客户提供视觉设计全流程服务。
+        </p>
     </div>
 </section>
 
-</div>
+<section class="py-12">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body flex items-center">
+                    <div class="mr-4">→</div>
+                    <div>
+                        <p class="text-blue-900 mb-1">数据合理</p>
+                        <p class="text-blue-900">真实体验</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body flex items-center">
+                    <div class="mr-4">→</div>
+                    <div>
+                        <p class="text-blue-900 mb-1">策略先行</p>
+                        <p class="text-blue-900">视觉原创</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl bg-pink-100">
+                <div class="card-body flex items-center">
+                    <div class="mr-4">→</div>
+                    <div>
+                        <p class="text-blue-900 mb-1">层层把关</p>
+                        <p class="text-blue-900">精益求精</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body flex items-center">
+                    <div class="mr-4">→</div>
+                    <div>
+                        <p class="text-blue-900 mb-1">专业至上</p>
+                        <p class="text-blue-900">精品交付</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="grid grid-cols-5 gap-4">
+        <div class="card bg-white shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">文案策划</h2>
+                <ul class="menu menu-compact">
+                    <li class="menu-item">策划方案/推广</li>
+                    <li class="menu-item">品牌识别设计</li>
+                    <li class="menu-item">广告文案撰写</li>
+                    <li class="menu-item">活动文案策划</li>
+                    <li class="menu-item">新媒体内容策划</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card bg-white shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">视觉创意</h2>
+                <ul class="menu menu-compact">
+                    <li class="menu-item">LOGO设计与美化</li>
+                    <li class="menu-item">主视觉设计</li>
+                    <li class="menu-item">活动/营销设计</li>
+                    <li class="menu-item">海报/宣传单设计</li>
+                    <li class="menu-item">网页/APP界面设计</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card bg-white shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">视觉创意</h2>
+                <ul class="menu menu-compact">
+                    <li class="menu-item">LOGO设计与美化</li>
+                    <li class="menu-item">主视觉设计</li>
+                    <li class="menu-item">活动/营销设计</li>
+                    <li class="menu-item">海报/宣传单设计</li>
+                    <li class="menu-item">网页/APP界面设计</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card bg-white shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">会议主视觉</h2>
+                <ul class="menu menu-compact">
+                    <li class="menu-item">会议主视觉设计</li>
+                    <li class="menu-item">会议现场装置设计</li>
+                    <li class="menu-item">会议手册/画册设计</li>
+                    <li class="menu-item">会议签到/标识设计</li>
+                    <li class="menu-item">会议展架/背景板设计</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card bg-white shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">印刷制作</h2>
+                <ul class="menu menu-compact">
+                    <li class="menu-item">会议手册/画册制作</li>
+                    <li class="menu-item">海报/宣传单制作</li>
+                    <li class="menu-item">X展架制作</li>
+                    <li class="menu-item">礼品/纪念品定制</li>
+                    <li class="menu-item">各类印刷品制作</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

@@ -8,4 +8,45 @@
 
 {% block content %}
 
+
+<section class="bg-[#bed5ff] py-8">
+    <div class="container mx-auto text-center h-96 flex justify-center items-center">
+        <h2 class="text-2xl font-semibold text-[#1d2668]">为客户创造可持续价值,让客户的利益最大化</h2>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {% for child in page.child_all.all %}
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold mb-4">{{ child.title }}</h3>
+                <hr class="border-gray-300 mb-4">
+                <p class="text-gray-600">{{ child.describe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-8">金属品牌创意--国内领先的宣传策划与视觉设计公司</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for gallery_image in page.gallery_images.all %}
+                {% image gallery_image.image fill-300x200 as img %}
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" />
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold">{{ gallery_image.caption }}</h4>
+                        <p class="text-gray-600">{{ gallery_image.describe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+    </div>
+</section>
+
+
 {% endblock content %}
