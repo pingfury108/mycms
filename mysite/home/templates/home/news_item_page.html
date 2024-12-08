@@ -3,9 +3,57 @@
 {% load static %}
 
 {% block extra_css %}
-
 {% endblock extra_css %}
 
 {% block content %}
+<div class="container mx-auto px-4">
+    <!-- 主标题区域 -->
+    <div class="text-center py-20 bg-blue-100">
+        <h1 class="text-6xl font-bold text-navy-900">G-EAGLE DESIGN</h1>
+    </div>
 
+    <!-- 副标题区域 -->
+    <div class="text-center py-10 bg-black text-white">
+        <h2 class="text-xl">专业品牌策略推设计 为了客户的成功而努力</h2>
+        <p class="text-sm mt-2 text-gray-400">专业的服务团队，为您提供最优质的设计服务...</p>
+    </div>
+
+    <!-- 服务类型导航 -->
+    <div class="flex justify-center gap-4 my-8">
+        <button class="px-6 py-2 bg-white hover:bg-gray-100">周年纪念册设计</button>
+        <button class="px-6 py-2 bg-white hover:bg-gray-100">企业宣传册设计</button>
+        <button class="px-6 py-2 bg-white hover:bg-gray-100">产品画册设计</button>
+        <button class="px-6 py-2 bg-white hover:bg-gray-100">印刷制作</button>
+    </div>
+
+    <!-- 作品展示区域 -->
+    <div class="grid grid-cols-3 gap-6 my-12">
+        <!-- 第一行作品 -->
+        <div class="bg-navy-900 aspect-square"></div>
+        <div class="bg-navy-900 aspect-square"></div>
+        <div class="bg-navy-900 aspect-square"></div>
+    </div>
+
+    <!-- 新闻资讯侧边栏 -->
+    <div class="fixed right-0 top-1/4 bg-white p-4 w-72 shadow-lg">
+        <h3 class="font-bold mb-4">热门资讯</h3>
+        <div class="space-y-4">
+            <img src="{% static 'path/to/news-image.jpg' %}" alt="新闻图片" class="w-full">
+            <div class="text-sm space-y-2">
+                <!-- 新闻列表项 -->
+                <p class="truncate">公司产品画册设计中产品展示的呈现方式有哪些...</p>
+                <p class="truncate">公司产品画册设计中产品展示的呈现方式有哪些...</p>
+                <!-- 更多新闻项... -->
+            </div>
+            <button class="bg-gray-200 text-sm px-4 py-1 w-full">更多</button>
+        </div>
+    </div>
+
+    <!-- 联系我们区域 -->
+    <div class="bg-white py-8 text-center my-12">
+        <h3 class="text-xl font-bold mb-4">选择专业，让您更高效</h3>
+        <p class="text-red-600 text-xl">010-6292 4170 1368 355 5200</p>
+        <p class="text-sm text-gray-600 mt-2">源自欧美专业服务支持,将合理的质量定义礼品</p>
+    </div>
+</div>
 {% endblock content %}
