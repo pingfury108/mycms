@@ -15,24 +15,35 @@
     </div>
 </section>
 
-
-<!-- 案例内容区 -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-    <!-- 案例卡片 1 -->
-    {% for image in page.images.all %}
-
-    {% image image.image fill-300x200 as img %}
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-48 object-cover">
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">案例标题</h3>
-            <p class="text-gray-600">案例描述内容...</p>
+<!-- 项目描述信息 -->
+<section class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-lg font-bold mb-2">项目名称：</h3>
+                <p>{{ page.title }}</p>
+                <h3 class="text-lg font-bold mb-2 mt-4">所属行业：</h3>
+                <p>{{ page.industry }}</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-2">服务内容：</h3>
+                <p>{{ page.describe }}</p>
+            </div>
         </div>
     </div>
+</section>
 
-    {% endfor %}
+<!-- 案例图片列表 -->
+<div class="container mx-auto px-4">
+    <div class="flex flex-col gap-8 mb-16">
+        {% for image in page.images.all %}
+        {% image image.image width-1200 as img %}
+        <div class="w-full">
+            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-96 object-cover">
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
 
 <section class="bg-[#F2E5DE] py-12">
     <div class="container mx-auto text-center px-4 text-[#000080]">
