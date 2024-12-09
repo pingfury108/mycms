@@ -32,47 +32,46 @@ class MyPage(Page):
         return context
 
 
-class PageGalleryImage(ClusterableModel):
-    page = ParentalKey(
-        "HomePage", on_delete=models.CASCADE, related_name="gallery_images"
-    )
-    image = models.ForeignKey(
-        "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
-    )
-    caption = models.CharField(max_length=250, blank=True)
-    describe = models.CharField(max_length=250, blank=True)
-    industry = models.CharField(max_length=250, blank=True)
-
-    panels = [FieldPanel("image"), FieldPanel("caption"), FieldPanel("describe")]
-
-
 class HomePage(MyPage):
     class Meta:
         verbose_name = "首页"
-
-    describe = models.CharField(max_length=250, blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("describe"),
-        InlinePanel("gallery_images", label="Gallery Images"),
-    ]
-
-    def get_context(self, request, *args, **kwargs):
-        context = super().get_context(request, *args, **kwargs)
-        context["child_all"] = HomePage.objects.child_of(self).live()
-        print(self.get_siblings())
-
-        return context
 
 
 class WorksCasesPage(MyPage):
     class Meta:
         verbose_name = "作品案例"
 
-    body = RichTextField(blank=True)
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["child_all"] = Page.objects.child_of(self).live()
+        print(context["child_all"])
 
+        return context
+
+
+class PageGalleryImage(ClusterableModel):
+    page = ParentalKey(
+        "CaseItemPage", on_delete=models.CASCADE, related_name="gallery_images"
+    )
+    image = models.ForeignKey(
+        "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
+    )
+    caption = models.CharField(max_length=250, blank=True)
+    describe = models.CharField(max_length=250, blank=True)
+
+    panels = [FieldPanel("image"), FieldPanel("caption"), FieldPanel("describe")]
+
+
+class CaseItemPage(MyPage):
+    class Meta:
+        verbose_name = "作品案例详情"
+
+    industry = models.CharField(max_length=250, blank=True)
+    describe = models.CharField(max_length=250, blank=True)
     content_panels = Page.content_panels + [
-        FieldPanel("body"),
+        FieldPanel("describe"),
+        FieldPanel("industry"),
+        InlinePanel("gallery_images", label="Gallery Images"),
     ]
 
 
@@ -85,6 +84,21 @@ class NewsPage(MyPage):
     content_panels = Page.content_panels + [
         FieldPanel("body"),
     ]
+
+
+class NewsItemPage(MyPage):
+    class Meta:
+        verbose_name = "新闻动态详情"
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    body = RichTextField(blank=True)
+    content_panels = Page.content_panels + [FieldPanel("body"), FieldPanel("image")]
 
 
 class AboutPage(MyPage):
