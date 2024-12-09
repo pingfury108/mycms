@@ -48,41 +48,46 @@
 
 <!-- 服务特点部分 -->
 <section class="py-16">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3">
-        <div class="card card-compact bg-base-100 w-96 shadow-xl">
-            <figure>
-                <img src="{% static 'images/about_row_1_0.png' %}" alt="Shoes" />
-            </figure>
-            <div class="card-body bg-[#f0d1c6]">
-                <h2 class="card-title">品牌策略制定</h2>
-                <p>助让传播更明确, 更高效!</p>
-                <p>针对企业不同诉求，洞察核心价值与现状，提供有效解决方案；</p>
-                <p>发现市场竞争机会，助力企业塑造品牌竞争力与价值增长。</p>
+    <div class="container mx-auto flex justify-center items-center">
+        <div class="w-1/3">
+            <div class="card card-compact bg-base-100 w-4/5 shadow-xl rounded-none">
+                <figure>
+                    <img src="{% static 'images/about_row_1_0.png' %}" alt="Shoes" />
+                </figure>
+                <div class="card-body bg-[#f0d1c6]">
+                    <h2 class="card-title">品牌策略制定</h2>
+                    <p>助让传播更明确, 更高效!</p>
+                    <p>针对企业不同诉求，洞察核心价值与现状，提供有效解决方案；</p>
+                    <p>发现市场竞争机会，助力企业塑造品牌竞争力与价值增长。</p>
 
+                </div>
+            </div>
+        </div>
+        <div class="w-1/3">
+            <div class="card card-compact bg-base-100 w-4/5 shadow-xl rounded-none">
+                <figure>
+                    <img src="{% static 'images/about_row_1_1.png' %}" alt="Shoes" />
+                </figure>
+                <div class="card-body bg-[#f0d1c6]">
+                    <h2 class="card-title">品牌价值激活</h2>
+                    <p>坚持从品牌内核出发，优化其核心诉求，</p>
+                    <p>讲故事，树形象，推动品牌价值长效可持续性发展；</p>
+                    <p>创作不同，塑造个性化品牌调性，设计独特统一视觉形象；</p>
+                </div>
             </div>
         </div>
 
-        <div class="card card-compact bg-base-100 w-96 shadow-xl">
-            <figure>
-                <img src="{% static 'images/about_row_1_1.png' %}" alt="Shoes" />
-            </figure>
-            <div class="card-body bg-[#f0d1c6]">
-                <h2 class="card-title">品牌价值激活</h2>
-                <p>坚持从品牌内核出发，优化其核心诉求，</p>
-                <p>讲故事，树形象，推动品牌价值长效可持续性发展；</p>
-                <p>创作不同，塑造个性化品牌调性，设计独特统一视觉形象；</p>
-            </div>
-        </div>
-
-        <div class="card card-compact bg-base-100 w-96 shadow-xl">
-            <figure>
-                <img src="{% static 'images/about_row_1_2.png' %}" alt="Shoes" />
-            </figure>
-            <div class="card-body bg-[#f0d1c6]">
-                <h2 class="card-title">创新视觉体验</h2>
-                <p>10余年专业创新设计及跨领域实战经验，</p>
-                <p>艺术与美学研究，个性化品牌视觉符号的创作能力，</p>
-                <p>可落地的执行策略，领先的印刷设备及会场筹划布置能力。</p>
+        <div class="w-1/3">
+            <div class="card card-compact bg-base-100 w-4/5 shadow-xl rounded-none">
+                <figure>
+                    <img src="{% static 'images/about_row_1_2.png' %}" alt="Shoes" />
+                </figure>
+                <div class="card-body bg-[#f0d1c6]">
+                    <h2 class="card-title">创新视觉体验</h2>
+                    <p>10余年专业创新设计及跨领域实战经验，</p>
+                    <p>艺术与美学研究，个性化品牌视觉符号的创作能力，</p>
+                    <p>可落地的执行策略，领先的印刷设备及会场筹划布置能力。</p>
+                </div>
             </div>
         </div>
     </div>
@@ -97,7 +102,7 @@
     </div>
     <div class="container mx-auto grid grid-cols-2 md:grid-cols-5 px-4 pt-16">
         <div class="flex justify-center items-center">
-            <div class="card bg-base-100 w-4/5 h-64 shadow-xl">
+            <div class="card bg-base-100 w-4/5 h-64 shadow-xl rounded-none">
                 <div class="card-body p-0">
                     <div class="bg-white p-4 text-center">
                         <p class="text-sm">需求与效果分析</p>
@@ -107,16 +112,16 @@
                         <p class="text-sm">框架分析与规划</p>
                     </div>
                     <div class="border-t border-gray-200"></div>
-                    <div class="bg-white p-4 text-center">
-                        <h4 class="font-bold text-blue-900">Strategy</h4>
-                        <p class="text-sm">策略</p>
+                    <div class="bg-white p-4 text-center  text-blue-900">
+                        <h4 class="font-bold">Strategy</h4>
+                        <p class="font-bold">策略</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="flex justify-center items-center">
-            <div class="card bg-base-100 w-4/5 h-64 shadow-xl">
+            <div class="card bg-base-100 w-4/5 h-64 shadow-xl rounded-none">
                 <div class="card-body p-0">
                     <div class="bg-white p-4 text-center">
                         <p class="text-sm">文案创作</p>
@@ -126,16 +131,16 @@
                         <p class="text-sm">文字编辑</p>
                     </div>
                     <div class="border-t border-gray-200"></div>
-                    <div class="bg-white p-4 text-center">
-                        <h4 class="font-bold text-blue-900">Copywriter</h4>
-                        <p class="text-sm">文案</p>
+                    <div class="bg-white p-4 text-center  text-blue-900">
+                        <h4 class="font-bold">Copywriter</h4>
+                        <p class="font-bold">文案</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="flex justify-center items-center">
-            <div class="card bg-base-100 w-4/5 h-64 shadow-xl">
+            <div class="card bg-base-100 w-4/5 h-64 shadow-xl rounded-none">
                 <div class="card-body p-0">
                     <div class="bg-white p-4 text-center">
                         <p class="text-sm">项目对接</p>
@@ -145,16 +150,16 @@
                         <p class="text-sm">效果反馈</p>
                     </div>
                     <div class="border-t border-gray-200"></div>
-                    <div class="bg-white p-4 text-center">
-                        <h4 class="font-bold text-blue-900">Cooperation</h4>
-                        <p class="text-sm">合作</p>
+                    <div class="bg-white p-4 text-center  text-blue-900">
+                        <h4 class="font-bold">Cooperation</h4>
+                        <p class="font-bold">合作</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="flex justify-center items-center">
-            <div class="card bg-base-100 w-4/5 h-64 shadow-xl">
+            <div class="card bg-base-100 w-4/5 h-64 shadow-xl rounded-none">
                 <div class="card-body p-0">
                     <div class="bg-white p-4 text-center">
                         <p class="text-sm">创意设计</p>
@@ -164,16 +169,16 @@
                         <p class="text-sm">效果呈现</p>
                     </div>
                     <div class="border-t border-gray-200"></div>
-                    <div class="bg-white p-4 text-center">
-                        <h4 class="font-bold text-blue-900">Design</h4>
-                        <p class="text-sm">设计</p>
+                    <div class="bg-white p-4 text-center  text-blue-900">
+                        <h4 class="font-bold ">Design</h4>
+                        <p class="font-bold">设计</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="flex justify-center items-center">
-            <div class="card bg-base-100 w-4/5 h-64 shadow-xl">
+            <div class="card bg-base-100 w-4/5 h-64 shadow-xl rounded-none">
                 <div class="card-body p-0">
                     <div class="bg-white p-4 text-center">
                         <p class="text-sm">材质选择</p>
@@ -183,9 +188,9 @@
                         <p class="text-sm">成品验收</p>
                     </div>
                     <div class="border-t border-gray-200"></div>
-                    <div class="bg-white p-4 text-center">
-                        <h4 class="font-bold text-blue-900">Printing</h4>
-                        <p class="text-sm">印刷</p>
+                    <div class="bg-white p-4 text-center  text-blue-900">
+                        <h4 class="font-bold">Printing</h4>
+                        <p class="font-bold">印刷</p>
                     </div>
                 </div>
             </div>
