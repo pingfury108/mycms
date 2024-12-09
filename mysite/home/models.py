@@ -41,18 +41,17 @@ class WorksCasesPage(MyPage):
     class Meta:
         verbose_name = "作品案例"
 
+    subpage_types = ["CaseItemPage"]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["child_all"] = Page.objects.child_of(self).live()
-        print(context["child_all"])
+        context["items"] = CaseItemPage.objects.all()
 
         return context
 
 
 class PageGalleryImage(ClusterableModel):
-    page = ParentalKey(
-        "CaseItemPage", on_delete=models.CASCADE, related_name="gallery_images"
-    )
+    page = ParentalKey("CaseItemPage", on_delete=models.CASCADE, related_name="images")
     image = models.ForeignKey(
         "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
     )
@@ -71,8 +70,13 @@ class CaseItemPage(MyPage):
     content_panels = Page.content_panels + [
         FieldPanel("describe"),
         FieldPanel("industry"),
-        InlinePanel("gallery_images", label="Gallery Images"),
+        InlinePanel("images", label="Images"),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        return context
 
 
 class NewsPage(MyPage):

@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% load wagtailcore_tags %}
+
+{% load wagtailimages_tags %}
+
 {% block extra_css %}
 
 {% endblock extra_css %}
@@ -43,25 +47,27 @@
 <section class="py-16">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {% for i in "123456789"|make_list %}
+            {% for child_page in items %}
             <div class="relative overflow-hidden">
-                <img src="{% static 'images/placeholder.jpg' %}" alt="作品展示" class="w-full h-64 object-cover">
-                <div class="mt-4">
-                    <h4 class="text-base font-medium text-gray-900">项目名称</h4>
-                    <p class="text-sm text-gray-600 mt-1">项目描述</p>
-                </div>
+                <a href="{% pageurl child_page %}">
+                    {% image child_page.images.first.image fill-400x300 as img %}
+                    <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full h-64 object-cover">
+                    <div class="mt-4">
+                        <h4 class="text-base font-medium text-gray-900">{{ child_page.title }}</h4>
+                        <p class="text-sm text-gray-600 mt-1">{{ child_page.describe }}</p>
+                    </div>
+                </a>
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
-<!-- 底部联系信息 -->
 <section class="bg-[#F2E5DE] py-12">
-    <div class="container mx-auto text-center px-4">
-        <p class="text-[#000080] text-xl mb-4">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
+    <div class="container mx-auto text-center px-4 text-[#000080] ">
+        <p class="text-xl mb-4">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
         <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
-        <p class="text-gray-700">1368 355 5200 / 010-62924170</p>
+        <p class="">1368 355 5200 / 010-62924170</p>
     </div>
 </section>
 
