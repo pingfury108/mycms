@@ -83,11 +83,7 @@ class NewsPage(MyPage):
     class Meta:
         verbose_name = "新闻动态"
 
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
-    ]
+    subpage_types = ["NewsItemPage"]
 
 
 class NewsItemPage(MyPage):

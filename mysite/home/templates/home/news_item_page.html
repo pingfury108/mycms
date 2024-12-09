@@ -1,59 +1,78 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
 
 {% block extra_css %}
 {% endblock extra_css %}
 
 {% block content %}
+
+<section class="bg-[#bed5ff] py-8">
+    <div class="container mx-auto text-center h-96 flex justify-center items-center">
+        <h1 class="text-[#1a237e] text-8xl font-bold mb-8">G-EAGLE DESIGN</h1>
+    </div>
+</section>
+
+
 <div class="container mx-auto px-4">
-    <!-- 主标题区域 -->
-    <div class="text-center py-20 bg-blue-100">
-        <h1 class="text-6xl font-bold text-navy-900">G-EAGLE DESIGN</h1>
+
+    <div class="text-center py-16">
+        <h2 class="text-[#1a237e] text-3xl font-bold mb-8">专业提供最佳的设计，为了客户的成功而努力</h2>
+        <p class="text-gray-600 text-lg">以大品牌战略体系，结合品牌发展策略及定位，深度挖掘品牌核心价值，高屋建瓴地为客户量身定制视觉设计解决方案，并提供全程落地指导。</p>
+        <p class="text-gray-600 text-lg">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,</p>
+        <p class="text-gray-600 text-lg">严谨务实地为客户提供专业化的视觉设计全流程服务,始终以提升品牌价值为己任.</p>
     </div>
 
-    <!-- 副标题区域 -->
-    <div class="text-center py-10 bg-black text-white">
-        <h2 class="text-xl">专业品牌策略推设计 为了客户的成功而努力</h2>
-        <p class="text-sm mt-2 text-gray-400">专业的服务团队，为您提供最优质的设计服务...</p>
-    </div>
-
-    <!-- 服务类型导航 -->
-    <div class="flex justify-center gap-4 my-8">
-        <button class="px-6 py-2 bg-white hover:bg-gray-100">周年纪念册设计</button>
-        <button class="px-6 py-2 bg-white hover:bg-gray-100">企业宣传册设计</button>
-        <button class="px-6 py-2 bg-white hover:bg-gray-100">产品画册设计</button>
-        <button class="px-6 py-2 bg-white hover:bg-gray-100">印刷制作</button>
-    </div>
-
-    <!-- 作品展示区域 -->
-    <div class="grid grid-cols-3 gap-6 my-12">
-        <!-- 第一行作品 -->
-        <div class="bg-navy-900 aspect-square"></div>
-        <div class="bg-navy-900 aspect-square"></div>
-        <div class="bg-navy-900 aspect-square"></div>
-    </div>
-
-    <!-- 新闻资讯侧边栏 -->
-    <div class="fixed right-0 top-1/4 bg-white p-4 w-72 shadow-lg">
-        <h3 class="font-bold mb-4">热门资讯</h3>
-        <div class="space-y-4">
-            <img src="{% static 'path/to/news-image.jpg' %}" alt="新闻图片" class="w-full">
-            <div class="text-sm space-y-2">
-                <!-- 新闻列表项 -->
-                <p class="truncate">公司产品画册设计中产品展示的呈现方式有哪些...</p>
-                <p class="truncate">公司产品画册设计中产品展示的呈现方式有哪些...</p>
-                <!-- 更多新闻项... -->
-            </div>
-            <button class="bg-gray-200 text-sm px-4 py-1 w-full">更多</button>
+    <div class="grid grid-cols-4 gap-6 mb-16">
+        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
+            <h3 class="text-lg font-semibold">周年纪念册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
+            <h3 class="text-lg font-semibold">企业宣传册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
+            <h3 class="text-lg font-semibold">产品画册设计</h3>
+        </div>
+        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
+            <h3 class="text-lg font-semibold">印刷制作</h3>
         </div>
     </div>
 
-    <!-- 联系我们区域 -->
-    <div class="bg-white py-8 text-center my-12">
-        <h3 class="text-xl font-bold mb-4">选择专业，让您更高效</h3>
-        <p class="text-red-600 text-xl">010-6292 4170 1368 355 5200</p>
-        <p class="text-sm text-gray-600 mt-2">源自欧美专业服务支持,将合理的质量定义礼品</p>
+    <!-- 作品展示区 -->
+    <div class="grid grid-cols-4 gap-8 mb-16">
+        <!-- 左侧案例展示 -->
+        <div class="space-y-4 col-span-3">
+            <h3 class="text-center text-lg font-bold">{{ page.title }}</h3>
+            <div>
+                {{ page.body | richtext }}
+            </div>
+        </div>
+        <!-- 右侧项目描述 -->
+        <div class="bg-white p-8 rounded-lg col-span-1">
+            <h3 class="text-xl font-bold mb-4">热门推荐</h3>
+            <hr class="my-8">
+
+            <p class="text-gray-600 leading-relaxed">
+                企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
+                <!-- 这里可以根据实际内容补充更多文字 -->
+            </p>
+        </div>
     </div>
 </div>
+
+<section class="">
+    <div class="container mx-auto grid grid-cols-2 h-48">
+        <div class="text-center pt-20">
+            <p class="text-[#08117e] text-2xl font-bold">选择专业，让您更高效</p>
+            <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>
+        </div>
+        <div class="flex flex-col justify-center pl-20">
+            <p class="text-gray-700 mb-2">制作高端宣传册，请致电：</p>
+            <p class="text-red-600 text-2xl font-bold mb-2">
+                010-6292 4170 1368 355 5200</p>
+            <p class="text-gray-700">即可获得专业顾问支持,将会得到贵宾级礼遇</p>
+        </div>
+    </div>
+</section>
 {% endblock content %}

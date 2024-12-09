@@ -2308,6 +2308,10 @@ input.tab:checked + .tab-content,
   grid-column: span 1 / span 1;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2847,6 +2851,11 @@ input.tab:checked + .tab-content,
   background-color: rgb(255 215 0 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#f2f2f4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 244 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -3035,6 +3044,11 @@ input.tab:checked + .tab-content,
 
 .text-6xl {
   font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
   line-height: 1;
 }
 
