@@ -3499,6 +3499,14 @@ input.tab:checked + .tab-content,
     visibility: visible;
   }
 
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -3509,6 +3517,10 @@ input.tab:checked + .tab-content,
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:text-4xl {

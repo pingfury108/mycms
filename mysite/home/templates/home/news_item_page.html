@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "home/news_page.html" %}
 
 {% load static wagtailcore_tags wagtailimages_tags %}
 
@@ -6,73 +6,25 @@
 {% block extra_css %}
 {% endblock extra_css %}
 
-{% block content %}
+{% block item %}
 
-<section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center h-96 flex justify-center items-center">
-        <h1 class="text-[#1a237e] text-8xl font-bold mb-8">G-EAGLE DESIGN</h1>
-    </div>
-</section>
-
-
-<div class="container mx-auto px-4">
-
-    <div class="text-center py-16">
-        <h2 class="text-[#1a237e] text-3xl font-bold mb-8">专业提供最佳的设计，为了客户的成功而努力</h2>
-        <p class="text-gray-600 text-lg">以大品牌战略体系，结合品牌发展策略及定位，深度挖掘品牌核心价值，高屋建瓴地为客户量身定制视觉设计解决方案，并提供全程落地指导。</p>
-        <p class="text-gray-600 text-lg">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,</p>
-        <p class="text-gray-600 text-lg">严谨务实地为客户提供专业化的视觉设计全流程服务,始终以提升品牌价值为己任.</p>
-    </div>
-
-    <div class="grid grid-cols-4 gap-6 mb-16">
-        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
-            <h3 class="text-lg font-semibold">周年纪念册设计</h3>
-        </div>
-        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
-            <h3 class="text-lg font-semibold">企业宣传册设计</h3>
-        </div>
-        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
-            <h3 class="text-lg font-semibold">产品画册设计</h3>
-        </div>
-        <div class="bg-white p-4 text-center shadow-md h-24 flex items-center justify-center">
-            <h3 class="text-lg font-semibold">印刷制作</h3>
+<div class="grid grid-cols-4 gap-8 mb-16">
+    <!-- 左侧案例展示 -->
+    <div class="space-y-4 col-span-3">
+        <h3 class="text-center text-lg font-bold">{{ page.title }}</h3>
+        <div>
+            {{ page.body | richtext }}
         </div>
     </div>
 
-    <!-- 作品展示区 -->
-    <div class="grid grid-cols-4 gap-8 mb-16">
-        <!-- 左侧案例展示 -->
-        <div class="space-y-4 col-span-3">
-            <h3 class="text-center text-lg font-bold">{{ page.title }}</h3>
-            <div>
-                {{ page.body | richtext }}
-            </div>
-        </div>
-        <!-- 右侧项目描述 -->
-        <div class="bg-white p-8 rounded-lg col-span-1">
-            <h3 class="text-xl font-bold mb-4">热门推荐</h3>
-            <hr class="my-8">
+    <!-- 右侧项目描述 -->
+    <div class="bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
+        <h3 class="text-xl font-bold mb-4">热门推荐</h3>
+        <hr class="my-8">
 
-            <p class="text-gray-600 leading-relaxed">
-                企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
-                <!-- 这里可以根据实际内容补充更多文字 -->
-            </p>
-        </div>
+        <p class="text-gray-600 leading-relaxed">
+            企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
+        </p>
     </div>
 </div>
-
-<section class="">
-    <div class="container mx-auto grid grid-cols-2 h-48">
-        <div class="text-center pt-20">
-            <p class="text-[#08117e] text-2xl font-bold">选择专业，让您更高效</p>
-            <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>
-        </div>
-        <div class="flex flex-col justify-center pl-20">
-            <p class="text-gray-700 mb-2">制作高端宣传册，请致电：</p>
-            <p class="text-red-600 text-2xl font-bold mb-2">
-                010-6292 4170 1368 355 5200</p>
-            <p class="text-gray-700">即可获得专业顾问支持,将会得到贵宾级礼遇</p>
-        </div>
-    </div>
-</section>
-{% endblock content %}
+{% endblock item %}
