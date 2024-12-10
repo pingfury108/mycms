@@ -10,23 +10,29 @@
 
 {% load wagtailimages_tags %}
 
-<section class="py-8 bg-[#fdbb01]">
-    <div class="carousel w-full h-96">
-        <div id="slide1" class="carousel-item relative w-full">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="text-[#08117e]">
-                    <h2 class="text-2xl font-bold text-center">以视觉创意提升品牌价值为己任</h2>
-                    <p>积极开展与百强企业的战略合作</p>
-                    <p>也协助新兴品牌的崛起</p>
+<section class="py-6 bg-[#fdbb01]">
+    <div class="carousel w-full h-96 hidden sm:block">
+        <div id="slide1" class="carousel-item relative w-full h-full">
+            <div class="container mx-auto h-full relative">
+                <div class="flex h-full justify-center items-center">
+                    <div class="text-[#08117e] w-full md:w-2/3 px-4">
+                        <p class="text-2xl md:text-3xl font-bold mb-4">以视觉创意提升品牌价值为己任</p>
+                        <p class="mb-2">积极开展与百强企业的战略合作</p>
+                        <p class="">也协助新兴品牌的崛起</p>
+                    </div>
                 </div>
             </div>
-            <div class="absolute left-10 right-10 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <a href="#slide4" class="btn btn-circle">❮</a>
-                <a href="#slide2" class="btn btn-circle">❯</a>
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href="#slide4"
+                    class="btn btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">❮</a>
+                <a href="#slide2"
+                    class="btn btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">❯</a>
             </div>
         </div>
     </div>
-    <div class="container mx-auto grid grid-cols-4 h-32">
+    {% include "home/home_carousel_sm.html" %}
+
+    <div class="container mx-auto hidden md:grid grid-cols-4 h-32">
         <div class="text-white bg-[#fdbb01] flex flex-col justify-center px-6">
             <p class="text-xl font-bold">服务内容</p>
             <div class="flex items-center">
@@ -73,6 +79,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <section class="py-12">

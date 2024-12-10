@@ -1,40 +1,29 @@
 {% load wagtailcore_tags %}
-<div class="navbar bg-base-100 w-full bg-[#fffff]">
+
+<div class="navbar bg-base-100 bg-[#fffff]">
     <div class="flex-1">
-        <a class="btn btn-ghost text-xl" href="/">G-EAGLE BRAND</a>
+        <a class="btn btn-ghost text-xl text-[#08117e]" href="/">
+            <span class="font-medium">G-EAGLE</span>
+            <span class="font-light">BRAND</span>
+        </a>
     </div>
-    <div class="flex-none text-[#1d2668]">
+    <div class="flex-none text-[#1d2668] hidden lg:block">
         <ul class="menu menu-horizontal px-1">
-            <li><a href="/">首页</a></li>
-
-            {% if works_cases_page %}
-            <li><a href="{% pageurl works_cases_page %}">作品案例</a></li>
-            {% else %}
-            <li><a>作品案例</a></li>
-            {% endif %}
-
-            {% if news_page %}
-            <li><a href="{% pageurl news_page %}">新闻动态</a></li>
-            {% else %}
-            <li><a>新闻动态</a></li>
-            {% endif %}
-
-
-            {% if about_page %}
-            <li><a href="{% pageurl about_page %}">关于我们</a></li>
-            {% else %}
-            <li><a>关于我们</a></li>
-            {% endif %}
-
-
-            {% if contact_us_page %}
-            <li><a href="{% pageurl contact_us_page %}">联系我们</a></li>
-            {% else %}
-            <li><a>联系我们</a></li>
-            {% endif %}
-
-
+            {% include "nav_li.html" %}
             <li><a>电话: 010-6292-4170 / 1368355500</a></li>
         </ul>
+    </div>
+    <div class="flex-none lg:hidden block text-[#1d2668] px-1">
+        <div class="dropdown dropdown-left">
+            <div tabindex="0" role="button" class="btn m-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+            <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                {% include "nav_li.html" %}
+            </ul>
+        </div>
     </div>
 </div>
