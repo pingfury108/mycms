@@ -1,100 +1,114 @@
 {% load wagtailcore_tags %}
 
 <footer class="bg-blue-900 py-4 bg-[#20256d]">
-    <div class="container mx-auto px-4 text-white">
-        <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
-        <div class="grid grid-cols-2 md:grid-cols-6">
-            <div class="col-span-2">
-                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
-            </div>
+    <div class="container mx-auto px-4 text-white lg:hidden block">
+        <div class="grid grid-cols-2">
+            <div class="h-12 w-12 bg-black mb-2"></div> <!--- 替换成你的 logo --->
             <div class="">
-                <h4 class="text-lg font-semibold mb-4">
-                    {% if industry_cases_page %}
-                    <a href="{% pageurl industry_cases_page %}">行业案例</a>
-                    {% else %}
-                    <a>行业案例</a>
-                    {% endif %}
-                </h4>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">
-                    {% if copywriter_page %}
-                    <a href="{% pageurl copywriter_page %}">文案策划</a>
-                    {% else %}
-                    <a>文案策划</a>
-                    {% endif %}
-                </h4>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">
-                    {% if brand_design_page %}
-                    <a href="{% pageurl brand_design_page %}">品牌设计</a>
-                    {% else %}
-                    <a>品牌设计</a>
-                    {% endif %}
-                </h4>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">
-                    {% if meeting_planning_page %}
-                    <a href="{% pageurl meeting_planning_page %}">会议策划</a>
-                    {% else %}
-                    <a>会议策划</a>
-                    {% endif %}
-                </h4>
-            </div>
-        </div>
-        <hr class="my-8">
-        <div class="grid grid-cols-2 md:grid-cols-6">
-            <div class="col-span-2">
-                <div class="h-12 w-12 bg-black mb-2"></div> <!--- 替换成你的 logo --->
+                <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
+                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
+
                 <p class="mb-2">咨询电话 (TEL)</p>
                 <p class="mb-2">010-6292 4170</p>
                 <p class="mb-2">1368 355 5200</p>
                 <p class="mb-2">北京西二金属集团中心9层</p>
                 <p class="mb-2">E-mail: 7256807@qq.com</p>
             </div>
+        </div>
+    </div>
+    <div class="container mx-auto px-4 text-white hidden sm:block">
+        <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
+        <div class="grid grid-cols-2">
             <div>
-                <ul class="space-y-2">
-                    <li>智能科技板块</li>
-                    <li>政府事业单位</li>
-                    <li>医疗美容健康</li>
-                    <li>建筑工程设施</li>
-                    <li>航空运输交通</li>
-                    <li>投资金融咨询</li>
-                </ul>
+                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
+                <div class="grid grid-cols-5">
+                    <div class="h-12 w-12 bg-black mb-2 col-span-2"></div> <!--- 替换成你的 logo --->
+                    <div class="col-span-3">
+                        <p class="mb-2">咨询电话 (TEL)</p>
+                        <p class="mb-2">010-6292 4170</p>
+                    </div>
+                </div>
+                <p class="mb-2">1368 355 5200</p>
+                <p class="mb-2">北京西二金属集团中心9层</p>
+                <p class="mb-2">E-mail: 7256807@qq.com</p>
             </div>
             <div>
-                <ul class="space-y-2">
-                    <li>文案策划</li>
-                    <li>市场分析</li>
-                    <li>基础策略</li>
-                    <li>品牌故事撰写</li>
-                    <li>架构梳理</li>
-                    <li>宣传品文案书写</li>
-                </ul>
-            </div>
-            <div>
-                <ul class="space-y-2">
-                    <li>LOGO/VI设计</li>
-                    <li>VI-应用系统设计</li>
-                    <li>宣传册设计</li>
-                    <li>企业画册设计</li>
-                    <li>周年纪念册设计</li>
-                    <li>施工画册设计</li>
-                </ul>
-            </div>
-            <div>
-                <ul class="space-y-2">
-                    <li>会议策划</li>
-                    <li>会议主题</li>
-                    <li>会场物料制作</li>
-                    <li>会议背景板</li>
-                    <li>纪念册设计</li>
-                    <li>纪念展览定制</li>
-                </ul>
+                <div class="grid grid-cols-1 md:grid-cols-4">
+                    <div class="">
+                        <h4 class="text-lg font-semibold mb-4">
+                            {% if industry_cases_page %}
+                            <a href="{% pageurl industry_cases_page %}">行业案例</a>
+                            {% else %}
+                            <a>行业案例</a>
+                            {% endif %}
+
+                        </h4>
+
+                        <ul class="space-y-2">
+                            <li>智能科技板块</li>
+                            <li>政府事业单位</li>
+                            <li>医疗美容健康</li>
+                            <li>建筑工程设施</li>
+                            <li>航空运输交通</li>
+                            <li>投资金融咨询</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">
+                            {% if copywriter_page %}
+                            <a href="{% pageurl copywriter_page %}">文案策划</a>
+                            {% else %}
+                            <a>文案策划</a>
+                            {% endif %}
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>会议策划</li>
+                            <li>会议主题</li>
+                            <li>会场物料制作</li>
+                            <li>会议背景板</li>
+                            <li>纪念册设计</li>
+                            <li>纪念展览定制</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">
+                            {% if brand_design_page %}
+                            <a href="{% pageurl brand_design_page %}">品牌设计</a>
+                            {% else %}
+                            <a>品牌设计</a>
+                            {% endif %}
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>LOGO/VI设计</li>
+                            <li>VI-应用系统设计</li>
+                            <li>宣传册设计</li>
+                            <li>企业画册设计</li>
+                            <li>周年纪念册设计</li>
+                            <li>施工画册设计</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">
+                            {% if meeting_planning_page %}
+                            <a href="{% pageurl meeting_planning_page %}">会议策划</a>
+                            {% else %}
+                            <a>会议策划</a>
+                            {% endif %}
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>会议策划</li>
+                            <li>会议主题</li>
+                            <li>会场物料制作</li>
+                            <li>会议背景板</li>
+                            <li>纪念册设计</li>
+                            <li>纪念展览定制</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container mx-auto text-white">
         <hr class="my-8">
         <p class="text-sm text-gray-400">
             友情链接：行业案例 | 金属画册设计 | 企业画册设计 <br>
