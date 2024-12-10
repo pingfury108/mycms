@@ -34,12 +34,11 @@
     {% block item %}
 
 
-    <!-- 作品展示区 -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
         <div class="space-y-4 lg:col-span-3 grid grid-cols-3 gap-2">
-            {%for child_page in self.get_children.all %}
+            {%for child_page in news_all %}
             {% image child_page.image fill-400x300 as img %}
-            <div class="bg-[#ffd700] p-6 col-span-1">
+            <div class="p-6 col-span-1">
                 <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full">
             </div>
             <div class="col-span-2">
@@ -51,14 +50,14 @@
             </div>
             {% endfor %}
         </div>
-        <!-- 右侧项目描述 -->
         <div class="bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
             <h3 class="text-xl font-bold mb-4">热门推荐</h3>
             <hr class="my-8">
-
+            {%for child_page in news_all %}
             <p class="text-gray-600 leading-relaxed">
-                企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
+                <a href="{% pageurl child_page %}" class="link link-hover">{{ child_page.title }}</a>
             </p>
+            {% endfor %}
         </div>
     </div>
 

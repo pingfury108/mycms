@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
 
 {% endblock extra_css %}
 
 {% block content %}
-
-{% load wagtailimages_tags %}
 
 <section class="py-6 bg-[#fdbb01]">
     <div class="carousel w-full h-96 hidden sm:block">
@@ -335,9 +333,10 @@
     </div>
 </section>
 
-<section class="">
-    <div class="container mx-auto bg-[#f0d1c6] h-96">
-        <p>团队照片</p>
+<section class="py-16">
+    <div class="container mx-auto h-96 flex justify-center items-center">
+        {% image team_image max-1500x384 as img %}
+        <img src="{{ img.url }}" class="max-w-full h-auto">
     </div>
 </section>
 
@@ -357,18 +356,27 @@
 </section>
 
 <section class="py-12">
-    <div class="container mx-auto grid grid-cols-2 gap-8">
-        <div class="text-center">
-            <div class="bg-gray-100 h-64 mb-4">图片</div>
-            <p class="text-gray-700">是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，
-
-                念画册设计公司，企业画册基本上是每一公司都是会使用的宣传广告专用工具，承载着公司许多的期待。高质量高品质的画册能够提高企业品牌形象</p>
+    <div class="container mx-auto grid grid-cols-2 gap-2">
+        {% for new in news %}
+        {% image new.image fill-400x300 as img %}
+        <div class="flex justify-center items-center flex-col">
+            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="">
+            <p>{{ new.title }}</p>
+            <div>
+                {{ new.body | richtext }}
+            </div>
         </div>
-        <div class="text-center">
-            <div class="bg-gray-100 h-64 mb-4">图片</div>
-            <p class="text-gray-700">金鹰品牌创意设计公司</p>
-        </div>
+        {% endfor %}
     </div>
+
+    <div class="container mx-auto grid grid-cols-3 p-4">
+        {% for new in news_all %}
+        <div class="flex justify-center items-center">
+            <p><a href="{% pageurl new %}">{{ new.title}}</a></p>
+        </div>
+        {% endfor %}
+    </div>
+
 </section>
 
 <section class="bg-[#f0d1c6] py-16 hidden sm:block">

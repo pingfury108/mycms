@@ -22,9 +22,11 @@
         <h3 class="text-xl font-bold mb-4">热门推荐</h3>
         <hr class="my-8">
 
+        {%for child_page in news_all %}
         <p class="text-gray-600 leading-relaxed">
-            企业产品画册设计-产品宣传册设计-企业宣传册设计-画册设计...
+            <a href="{% pageurl child_page %}" class="link link-hover">{{ child_page.title }}</a>
         </p>
+        {% endfor %}
     </div>
 </div>
 {% endblock item %}

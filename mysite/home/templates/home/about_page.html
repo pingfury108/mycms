@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
 
@@ -227,13 +227,14 @@
 </section>
 
 <section class="py-16">
-    <div class="container mx-auto h-96 bg-[#f0d1c6]">
-        <img>团队照片</img>
+    <div class="container mx-auto h-96 flex justify-center items-center">
+        {% image page.team_image max-1500x384 as img %}
+        <img src="{{ img.url }}" class="max-w-full h-auto">
     </div>
 </section>
 
 
-<section class="py-16">
+<section class="py-8">
     <div class="container mx-auto px-4 bg-[#f2f2f4]">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12  h-64 flex justify-center items-center">
             <div class="text-center">
@@ -257,13 +258,13 @@
     </div>
 </section>
 
-<section class="py-16">
+<section class="py-8">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-3 md:grid-cols-7 gap-4">
-            {% for i in "123" %}
+            {% for logo in logos %}
+            {% image logo.image width-400 as img %}
             <div class="bg-white p-4 flex items-center justify-center">
-                <img src="{% static 'images/client-logo.svg' %}" alt="客户logo"
-                    class="w-full grayscale hover:grayscale-0 transition-all">
+                <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full grayscale hover:grayscale-0 transition-all">
             </div>
             {% endfor %}
         </div>

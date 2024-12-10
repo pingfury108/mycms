@@ -36,6 +36,15 @@ class HomePage(MyPage):
     class Meta:
         verbose_name = "首页"
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["news"] = NewsItemPage.objects.all()[:2]
+        context["news_all"] = NewsItemPage.objects.all()
+
+        context["team_image"] = AboutPage.objects.first().team_image
+
+        return context
+
 
 class WorksCasesPage(MyPage):
     class Meta:
@@ -85,6 +94,12 @@ class NewsPage(MyPage):
 
     subpage_types = ["NewsItemPage"]
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["news_all"] = NewsItemPage.objects.all()
+
+        return context
+
 
 class NewsItemPage(MyPage):
     class Meta:
@@ -100,6 +115,22 @@ class NewsItemPage(MyPage):
     body = RichTextField(blank=True)
     content_panels = Page.content_panels + [FieldPanel("body"), FieldPanel("image")]
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["news_all"] = NewsItemPage.objects.all()
+
+        return context
+
+
+class LogGalleryImage(ClusterableModel):
+    page = ParentalKey("AboutPage", on_delete=models.CASCADE, related_name="logos")
+    image = models.ForeignKey(
+        "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
+    )
+    caption = models.CharField(max_length=250, blank=True)
+
+    panels = [FieldPanel("image"), FieldPanel("caption")]
+
 
 class AboutPage(MyPage):
     class Meta:
@@ -107,9 +138,25 @@ class AboutPage(MyPage):
 
     body = RichTextField(blank=True)
 
+    team_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel("body"),
+        FieldPanel("team_image"),
+        InlinePanel("logos", label="Logos"),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["logos"] = LogGalleryImage.objects.all()
+
+        return context
 
 
 class ContactUsPage(MyPage):
