@@ -2581,6 +2581,10 @@ input.tab:checked + .tab-content,
   height: 100vh;
 }
 
+.h-\[660px\] {
+  height: 660px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -3327,6 +3331,10 @@ input.tab:checked + .tab-content,
 @media (min-width: 768px) {
   .md\:grid {
     display: grid;
+  }
+
+  .md\:h-\[660px\] {
+    height: 660px;
   }
 
   .md\:w-2\/3 {

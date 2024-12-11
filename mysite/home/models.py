@@ -38,6 +38,31 @@ class HomePage(MyPage):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+
+        context["case_item_main"] = CaseItemPage.objects.filter(
+            is_home_item=True, is_home_item_row=1
+        ).first()
+
+        context["case_item_row1_left"] = CaseItemPage.objects.filter(
+            is_home_item=True, is_home_item_row=2, is_home_item_left=True
+        ).first()
+
+        context["case_item_row1_right"] = CaseItemPage.objects.filter(
+            is_home_item=True, is_home_item_row=2, is_home_item_right=True
+        ).first()
+
+        context["case_item_row2_left"] = CaseItemPage.objects.filter(
+            is_home_item=True, is_home_item_row=3, is_home_item_left=True
+        ).first()
+
+        context["case_item_row2_right"] = CaseItemPage.objects.filter(
+            is_home_item=True, is_home_item_row=3, is_home_item_right=True
+        ).first()
+
+        context["case_items"] = CaseItemPage.objects.filter(
+            is_home_item=False,
+        ).all()[:6]
+
         context["news"] = NewsItemPage.objects.all()[:2]
         context["news_all"] = NewsItemPage.objects.all()
 
@@ -66,8 +91,14 @@ class PageGalleryImage(ClusterableModel):
     )
     caption = models.CharField(max_length=250, blank=True)
     describe = models.CharField(max_length=250, blank=True)
+    is_home = models.BooleanField(default=False)
 
-    panels = [FieldPanel("image"), FieldPanel("caption"), FieldPanel("describe")]
+    panels = [
+        FieldPanel("image"),
+        FieldPanel("caption"),
+        FieldPanel("describe"),
+        FieldPanel("is_home"),
+    ]
 
 
 class CaseItemPage(MyPage):
@@ -76,10 +107,19 @@ class CaseItemPage(MyPage):
 
     industry = models.CharField(max_length=250, blank=True)
     describe = models.CharField(max_length=250, blank=True)
+    is_home_item = models.BooleanField(default=False)
+    is_home_item_row = models.IntegerField(default=0)
+    is_home_item_left = models.BooleanField(default=False)
+    is_home_item_right = models.BooleanField(default=False)
+
     body = RichTextField(blank=True)
     content_panels = Page.content_panels + [
         FieldPanel("describe"),
         FieldPanel("industry"),
+        FieldPanel("is_home_item"),
+        FieldPanel("is_home_item_row"),
+        FieldPanel("is_home_item_left"),
+        FieldPanel("is_home_item_right"),
         FieldPanel("body"),
         InlinePanel("images", label="Images"),
     ]
