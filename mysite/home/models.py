@@ -9,10 +9,10 @@ from modelcluster.models import ClusterableModel
 
 
 def get_pages(context):
-    context["works_cases_page"] = Page.objects.filter(title="作品案例").first()
-    context["news_page"] = Page.objects.filter(title="新闻动态").first()
-    context["about_page"] = Page.objects.filter(title="关于我们").first()
-    context["contact_us_page"] = Page.objects.filter(title="联系我们").first()
+    context["works_cases_page"] = WorksCasesPage.objects.first()
+    context["news_page"] = NewsPage.objects.first()
+    context["about_page"] = AboutPage.objects.first()
+    context["contact_us_page"] = ContactUsPage.objects.first()
     context["industry_cases_page"] = Page.objects.filter(title="行业案例").first()
     context["copywriter_page"] = Page.objects.filter(title="文案策划").first()
     context["brand_design_page"] = Page.objects.filter(title="品牌设计").first()
@@ -167,8 +167,25 @@ class ContactUsPage(MyPage):
 
     body = RichTextField(blank=True)
 
+    qrcode_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    tel = models.CharField(max_length=250, blank=True)
+    mobile = models.CharField(max_length=250, blank=True)
+    addr = models.CharField(max_length=250, blank=True)
+    email = models.CharField(max_length=250, blank=True)
+
     content_panels = Page.content_panels + [
         FieldPanel("body"),
+        FieldPanel("addr"),
+        FieldPanel("qrcode_image"),
+        FieldPanel("tel"),
+        FieldPanel("mobile"),
+        FieldPanel("email"),
     ]
 
 

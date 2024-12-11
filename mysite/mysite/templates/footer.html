@@ -1,36 +1,41 @@
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 <footer class="bg-blue-900 py-4 bg-[#20256d]">
     <div class="container mx-auto px-4 text-white lg:hidden block">
         <div class="grid grid-cols-2">
-            <div class="h-12 w-12 bg-black mb-2"></div> <!--- 替换成你的 logo --->
+            <div class="col-span-2">
+                {% image contact_us_page.qrcode_image fill-200x200 as img %}
+                <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full">
+            </div>
             <div class="">
-                <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
-                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
-
+                <p class="text-xl font-bold mb-4">金属品牌创意</p>
+                <p class="text-2xl font-bold mb-2">JINACD BRAND</p>
                 <p class="mb-2">咨询电话 (TEL)</p>
-                <p class="mb-2">010-6292 4170</p>
-                <p class="mb-2">1368 355 5200</p>
-                <p class="mb-2">北京西二金属集团中心9层</p>
-                <p class="mb-2">E-mail: 7256807@qq.com</p>
+                <p class="mb-2">{{ contact_us_page.tel }}</p>
+                <p class="mb-2">{{ contact_us_page.mobile }}</p>
+                <p class="mb-2">{{ contact_us_page.addr }}</p>
+                <p class="mb-2">E-mail: {{ contact_us_page.email }}</p>
             </div>
         </div>
     </div>
     <div class="container mx-auto px-4 text-white hidden sm:block">
-        <h3 class="text-xl font-bold mb-4">金属品牌创意</h3>
+        <p> class="text-xl font-bold mb-4">金属品牌创意</p>
         <div class="grid grid-cols-2">
             <div>
-                <h4 class="text-2xl font-bold mb-2">JINACD BRAND</h4>
+                <p class="text-2xl font-bold mb-2">JINACD BRAND</p>
                 <div class="grid grid-cols-5">
-                    <div class="h-12 w-12 bg-black mb-2 col-span-2"></div> <!--- 替换成你的 logo --->
+                    <div class="h-64 col-span-2">
+                        {% image contact_us_page.qrcode_image fill-300x300 as img %}
+                        <img src=" {{ img.url }}" alt="{{ img.alt }}" class="h-full">
+                    </div>
                     <div class="col-span-3">
                         <p class="mb-2">咨询电话 (TEL)</p>
-                        <p class="mb-2">010-6292 4170</p>
+                        <p class="mb-2">{{ contact_us_page.tel }}</p>
+                        <p class="mb-2">{{ contact_us_page.mobile }}</p>
                     </div>
                 </div>
-                <p class="mb-2">1368 355 5200</p>
-                <p class="mb-2">北京西二金属集团中心9层</p>
-                <p class="mb-2">E-mail: 7256807@qq.com</p>
+                <p class="mb-2">{{ contact_us_page.addr }}</p>
+                <p class="mb-2">E-mail: {{ contact_us_page.email }}</p>
             </div>
             <div>
                 <div class="grid grid-cols-1 md:grid-cols-4">

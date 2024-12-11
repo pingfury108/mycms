@@ -9,15 +9,15 @@
 {% block item %}
 
 <div class="grid grid-cols-4 gap-8 mb-16">
-    <!-- 左侧案例展示 -->
     <div class="space-y-4 col-span-3">
-        <h3 class="text-center text-lg font-bold">{{ page.title }}</h3>
+        <p class="text-center text-lg font-bold">{{ page.title }}</p>
         <div>
             {{ page.body | richtext }}
         </div>
+        <div class="grid place-items-end"><button class="btn btn-xs"><a
+                    href="{%pageurl page.get_parent%}">返回</a></button></div>
     </div>
 
-    <!-- 右侧项目描述 -->
     <div class="bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
         <h3 class="text-xl font-bold mb-4">热门推荐</h3>
         <hr class="my-8">

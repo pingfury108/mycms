@@ -160,11 +160,11 @@
         </div>
         <div class="flex gap-1 p-1">
             <img src="{% static 'images/home_row_3_0.png' %}" class="w-1/2"></img>
-            <img src="{% static 'images/home_row_3_1.png' %}" class="w-1/2"></img>
+            <img src="{% static 'images/home_row_3_0.png' %}" class="w-1/2"></img>
         </div>
         <div class="flex gap-1 p-1">
             <img src="{% static 'images/home_row_4_0.png' %}" class="w-1/2"></img>
-            <img src="{% static 'images/home_row_4_1.png' %}" class="w-1/2"></img>
+            <img src="{% static 'images/home_row_3_0.png' %}" class="w-1/2"></img>
         </div>
         <div class="flex gap-1 p-1">
             <img src="{% static 'images/home_row_5_0.png' %}" class="w-1/2"></img>
@@ -357,8 +357,8 @@
     </div>
 </section>
 
-<section>
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 bg-[#f2f2f4]">
+<section class="py-16  bg-[#f2f2f4]">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48">
         <div class="text-center pt-20">
             <p class="text-[#08117e] text-2xl font-bold">选择专业，让您更高效</p>
             <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>
@@ -373,7 +373,7 @@
 </section>
 
 <section class="py-12">
-    <div class="container mx-auto grid grid-cols-2 gap-1">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-1">
         {% for new in news %}
         {% image new.image max-760x370 as img %}
         <div class="">
@@ -388,7 +388,7 @@
         {% endfor %}
     </div>
 
-    <div class="container mx-auto grid grid-cols-3 p-4">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 p-4">
         {% for new in news_all %}
         <div class="">
             <p><a href="{% pageurl new %}">{{ new.title}}</a></p>

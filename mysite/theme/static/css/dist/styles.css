@@ -2222,6 +2222,14 @@ input.tab:checked + .tab-content,
   font-size: 0.75rem;
 }
 
+.btn-sm {
+  height: 2rem;
+  min-height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+}
+
 .btn-wide {
   width: 16rem;
 }
@@ -2229,6 +2237,12 @@ input.tab:checked + .tab-content,
 .btn-square:where(.btn-xs) {
   height: 1.5rem;
   width: 1.5rem;
+  padding: 0px;
+}
+
+.btn-square:where(.btn-sm) {
+  height: 2rem;
+  width: 2rem;
   padding: 0px;
 }
 
@@ -2712,6 +2726,10 @@ input.tab:checked + .tab-content,
   height: auto;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -2782,6 +2800,10 @@ input.tab:checked + .tab-content,
 
 .w-3\/5 {
   width: 60%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .max-w-3xl {
@@ -2857,6 +2879,10 @@ input.tab:checked + .tab-content,
   place-items: start;
 }
 
+.place-items-end {
+  place-items: end;
+}
+
 .place-items-center {
   place-items: center;
 }
@@ -2897,6 +2923,10 @@ input.tab:checked + .tab-content,
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2935,6 +2965,10 @@ input.tab:checked + .tab-content,
 
 .rounded-none {
   border-radius: 0px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .border {

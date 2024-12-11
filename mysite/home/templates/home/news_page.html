@@ -42,11 +42,11 @@
                 <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full">
             </div>
             <div class="col-span-2">
-                <h3>{{ child_page.title }}</h3>
-                <div>
+                <p class="text-xl">{{ child_page.title }}</p>
+                <div class="py-5">
                     {{ child_page.body | richtext }}
                 </div>
-                <button class="btn"><a href="{% pageurl child_page %}">查看更多+</a></button>
+                <button class="btn btn-sm"><a href="{% pageurl child_page %}">查看更多+</a></button>
             </div>
             {% endfor %}
         </div>
