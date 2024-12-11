@@ -14,7 +14,7 @@
 
 <!-- 标题区域 -->
 <section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center w-[1700px] h-96 flex justify-center items-center">
+    <div class="container mx-auto text-center lg:w-[1700px] h-96 flex justify-center items-center">
         <h2 class="text-2xl font-semibold text-[#1d2668]">为客户创造可持续价值,让客户的利益最大化</h2>
     </div>
 </section>
@@ -48,7 +48,7 @@
 </section>
 
 <section class="py-4">
-    <div class="container mx-auto w-[1700px] px-4">
+    <div class="container mx-auto lg:w-[1700px] px-4">
         <p class="text-lg md:text-xl lg:text-2xl font-bold mb-8 text-[#08117e]">金属品牌创意--国内领先的宣传策划与视觉设计公司</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
             {% for child_page in items %}
@@ -56,7 +56,8 @@
                 <a href="{% pageurl child_page %}" class="block h-full">
                     {% image child_page.images.first.image fill-400x300 as img %}
                     <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-64 object-cover">
-                    <div class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="text-white text-left ml-4 mb-4">
                             <h4 class="text-base font-medium">{{ child_page.title }}</h4>
                             <p class="text-sm mt-1">
@@ -75,7 +76,7 @@
 </section>
 
 <section class="bg-[#F2E5DE] py-12 hidden sm:block">
-    <div class="container mx-auto w-[1700px] text-center px-4 text-[#000080] ">
+    <div class="container mx-auto lg:w-[1700px] text-center px-4 text-[#000080] ">
         <p class="text-xl mb-4">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
         <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
         <p class="">1368 355 5200 / 010-62924170</p>
@@ -83,7 +84,7 @@
 </section>
 
 <section class="lg:hidden block bg-[#f0d1c6]">
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 w-[1700px]">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 lg:w-[1700px]">
         <div class="text-center pt-20">
             <p class="text-[#08117e] text-2xl font-bold">选择专业，让您更高效</p>
             <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>

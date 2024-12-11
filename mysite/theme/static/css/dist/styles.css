@@ -3399,6 +3399,24 @@ input.tab:checked + .tab-content,
     display: none;
   }
 
+  .lg\:w-\[1700px\] {
+    width: 1700px;
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:lg\:w-\[1700px\] {
+      width: 1700px;
+    }
+  }
+
+  .lg\:w-\[1560px\] {
+    width: 1560px;
+  }
+
+  .lg\:w-\[1920px\] {
+    width: 1920px;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

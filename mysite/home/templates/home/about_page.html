@@ -9,14 +9,14 @@
 {% block content %}
 
 <section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center h-96 flex justify-center items-center w-[1700px]">
+    <div class="container mx-auto text-center h-96 flex justify-center items-center lg:w-[1700px]">
         <h1 class="text-[#1a237e] text-8xl font-bold mb-8">G-EAGLE DESIGN</h1>
     </div>
 </section>
 
 
 <section class="py-16">
-    <div class="container mx-auto text-center w-[1700px]">
+    <div class="container mx-auto text-center lg:w-[1700px]">
         <p class="text-4xl font-bold text-blue-900 mb-4">以策略为先导，深入品牌研究，让标准清晰可见</p>
         <p class="">金鹰品创以策略思维为先导，深度挖掘品牌核心价值，以品牌塑造赋能，用美学创造价值，创作差异化视觉符号，着手创造品牌造势空间。</p>
         <p class="pt-2">北京金鹰文创科技有限公司已由电气之设计工作室发展成为专注品牌规划的策略型设计公司。</p>
@@ -28,13 +28,13 @@
 
 
 <section class="py-16">
-    <div class="container mx-auto w-[1700px]">
+    <div class="container mx-auto lg:lg:w-[1700px]">
         <img src="{% static 'images/about_row_3d.png' %}" alt="3D文字效果" class="w-full">
     </div>
 </section>
 
 <section class="py-16">
-    <div class="container mx-auto text-center w-[1700px]">
+    <div class="container mx-auto text-center lg:lg:w-[1700px]">
         <p class="text-4xl font-bold text-blue-900 mb-4">创变时代，以创新思维，为企业提供可持续发展的源动力</p>
         <p class="">金鹰品创以策略思维为先导，深度挖掘品牌核心价值，以品牌塑造赋能，用美学创造价值，创作差异化视觉符号，着手创造品牌造势空间。</p>
         <p class="pt-2">北京金鹰文创科技有限公司已由电气之设计工作室发展成为专注品牌规划的策略型设计公司。</p>
@@ -45,7 +45,7 @@
 </section>
 
 <section class="py-16">
-    <div class="container mx-auto flex flex-wrap justify-center items-center w-[1700px]">
+    <div class="container mx-auto flex flex-wrap justify-center items-center lg:lg:w-[1700px]">
         <div class="w-full sm:w-1/3 p-2">
             <div class="card card-compact bg-base-100 w-full shadow-xl rounded-none">
                 <figure>
@@ -91,7 +91,7 @@
 </section>
 
 <section class="py-16">
-    <div class="container mx-auto w-[1700px]">
+    <div class="container mx-auto lg:lg:w-[1700px]">
         <h2 class="text-3xl font-bold text-center text-[#08117e]">专注于精品品牌策划、企业视觉形象整合服务</h2>
         <p class="text-center">高品质宣传册，仍然是近距离交流且高效的营销工具，通过语言艺术、以差异化定位策略，独特的视觉设计，</p>
         <p class="text-center">基于竞争，做到不同，持续有效提升品牌价值；专注于为企业提供品牌成长策略, 文案策划, 视觉创意, 画册设计,印刷制作等视觉一体化解决方案.</p>
@@ -198,7 +198,7 @@
 
 
 <section class="py-16 bg-[#f2f2f4]">
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 w-[1700px]">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 lg:lg:w-[1700px]">
         <div class="text-center pt-20">
             <p class="text-[#08117e] text-2xl font-bold">选择专业，让您更高效</p>
             <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>
@@ -214,7 +214,7 @@
 
 
 <section class="py-16">
-    <div class="container mx-auto w-[1700px]">
+    <div class="container mx-auto lg:lg:w-[1700px]">
         <h2 class="text-3xl font-bold text-center text-[#08117e]">立志做行业标杆，完美保障落地执行</h2>
         <p class="text-center pt-10 p-4">远景：做细分领域最受尊重的策略性设计公司</p>
         <p class="text-center p-4">使命：专注为客户挖掘品牌价值、打造品牌独特视觉体系。</p>
@@ -224,7 +224,7 @@
 </section>
 
 <section class="py-16">
-    <div class="container mx-auto h-96 flex justify-center items-center w-[1700px]">
+    <div class="container mx-auto h-96 flex justify-center items-center lg:lg:w-[1700px]">
         {% image page.team_image max-1500x384 as img %}
         <img src="{{ img.url }}" class="max-w-full h-auto">
     </div>
@@ -232,7 +232,7 @@
 
 
 <section class="py-8  bg-[#f2f2f4]">
-    <div class="container mx-auto px-4 w-[1700px]">
+    <div class="container mx-auto px-4 lg:lg:w-[1700px]">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12  h-64 flex justify-center items-center">
             <div class="text-center">
                 <div class="text-3xl font-bold text-blue-900">15+</div>
@@ -256,7 +256,7 @@
 </section>
 
 <section class="py-8">
-    <div class="container mx-auto px-4 w-[1700px]">
+    <div class="container mx-auto px-4 lg:lg:w-[1700px]">
         <div class="grid grid-cols-3 md:grid-cols-7 gap-4">
             {% for logo in logos %}
             {% image logo.image width-400 as img %}
