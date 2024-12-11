@@ -2730,6 +2730,10 @@ input.tab:checked + .tab-content,
   height: 1rem;
 }
 
+.h-\[700px\] {
+  height: 700px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -2804,6 +2808,22 @@ input.tab:checked + .tab-content,
 
 .w-4 {
   width: 1rem;
+}
+
+.w-\[1920px\] {
+  width: 1920px;
+}
+
+.w-\[1700px\] {
+  width: 1700px;
+}
+
+.w-\[1500px\] {
+  width: 1500px;
+}
+
+.w-\[1560px\] {
+  width: 1560px;
 }
 
 .max-w-3xl {

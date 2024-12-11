@@ -35,11 +35,11 @@ WORKDIR /app
 # will be writing to the database file.
 RUN chown wagtail:wagtail /app
 
-# Install the project requirements.
-RUN pip install -r requirements.lock
-
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
+
+# Install the project requirements.
+RUN pip install -r requirements.lock
 
 
 # Use user "wagtail" to run the build commands below and the server itself.
