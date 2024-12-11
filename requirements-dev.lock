@@ -77,7 +77,6 @@ pillow==11.0.0
 pillow-heif==0.21.0
     # via willow
 pip==24.3.1
-    # via mycms
 pytz==2024.2
     # via django-modelcluster
     # via l18n
