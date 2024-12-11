@@ -19,7 +19,7 @@ jobs:
     - name: Copy requirements
       run: cat requirements.lock > ./mysite/requirements.txt
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $IMAGE_NAME:$(date +%s)
+      run: docker build . --file ./mysite/Dockerfile --tag $IMAGE_NAME:$(date +%s)
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
