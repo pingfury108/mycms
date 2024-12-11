@@ -27,11 +27,6 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 # Install the application server.
 RUN pip install "gunicorn==20.0.4"
 
-# Install the project requirements.
-COPY requirements.txt /
-RUN cat /requirements.txt
-RUN pip install -r /requirements.txt
-
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
@@ -40,12 +35,17 @@ WORKDIR /app
 # will be writing to the database file.
 RUN chown wagtail:wagtail /app
 
+# Install the project requirements.
+RUN pip install -r requirements.lock
+
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
 
 
 # Use user "wagtail" to run the build commands below and the server itself.
 USER wagtail
+
+WORKDIR /mysite
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
