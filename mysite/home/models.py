@@ -76,9 +76,11 @@ class CaseItemPage(MyPage):
 
     industry = models.CharField(max_length=250, blank=True)
     describe = models.CharField(max_length=250, blank=True)
+    body = RichTextField(blank=True)
     content_panels = Page.content_panels + [
         FieldPanel("describe"),
         FieldPanel("industry"),
+        FieldPanel("body"),
         InlinePanel("images", label="Images"),
     ]
 

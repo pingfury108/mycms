@@ -28,6 +28,9 @@
             <div>
                 <h3 class="text-lg font-bold mb-2">服务内容：</h3>
                 <p>{{ page.describe }}</p>
+                <div>
+                    {{ page.body | richtext }}
+                </div>
             </div>
         </div>
     </div>
