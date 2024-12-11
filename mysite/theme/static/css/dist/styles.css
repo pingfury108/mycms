@@ -2826,6 +2826,10 @@ input.tab:checked + .tab-content,
   width: 1560px;
 }
 
+.w-\[\#1700px\] {
+  width: #1700px;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
