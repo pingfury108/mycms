@@ -36,11 +36,11 @@
 </section>
 
 <div class="px-4">
-    <div class="container w-[1700px] mx-auto flex flex-col gap-8 mb-16 ">
+    <div class="container lg:w-[1700px] mx-auto flex flex-col gap-8 mb-16 ">
         {% for image in page.images.all %}
-        {% image image.image width-1200 as img %}
+        {% image image.image original as img %}
         <div class="w-full">
-            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-96 object-cover">
+            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full lg:h-[660px] object-cover">
         </div>
         {% endfor %}
     </div>
@@ -50,7 +50,7 @@
 
 
 <section class="bg-[#F2E5DE] py-12">
-    <div class="container mx-auto w-[1700px] text-center px-4 text-[#000080]">
+    <div class="container mx-auto lg:lg:w-[1700px] text-center px-4 text-[#000080]">
         <p class="text-xl mb-4">每个梦想，我们都将竭力相助</p>
         <p class="text-xl mb-4">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
         <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
