@@ -46,7 +46,8 @@ module.exports = {
       colors: {
         "my-blue": '#071764',
         "my-gold": '#EBD2C8',
-        "my-black": '#1A1A1A'
+        "my-black": '#1A1A1A',
+        "black": '#1A1A1A',
       }
     },
   },
