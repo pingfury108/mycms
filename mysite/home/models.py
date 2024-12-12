@@ -18,6 +18,8 @@ def get_pages(context):
     context["brand_design_page"] = Page.objects.filter(title="品牌设计").first()
     context["meeting_planning_page"] = Page.objects.filter(title="会议策划").first()
 
+    context["case_items"] = CaseItemPage.objects.all()
+
     return context
 
 

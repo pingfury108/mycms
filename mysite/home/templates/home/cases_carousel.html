@@ -1,0 +1,30 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<section class="py-8">
+    <div class="container mx-auto lg:w-[1700px]">
+        <div class="carousel rounded-box px-2">
+            {% for child_page in case_items %}
+            <div class="carousel-item">
+                <div class="relative overflow-hidden group">
+                    <a href="{% pageurl child_page %}" class="block h-full">
+                        {% image child_page.images.first.image fill-400x300 as img %}
+                        <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-64 object-cover">
+                        <div
+                            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="text-white text-left ml-4 mb-4">
+                                <h4 class="text-base font-medium">{{ child_page.title }}</h4>
+                                <p class="text-sm mt-1">
+                                    <span class="font-medium">所属行业:</span> {{ child_page.industry }}
+                                </p>
+                                <p class="text-sm mt-1">
+                                    <span class="font-medium">服务内容:</span> {{ child_page.describe }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
