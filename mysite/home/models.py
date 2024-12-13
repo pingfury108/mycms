@@ -70,7 +70,32 @@ class HomePage(MyPage):
 
         context["team_image"] = AboutPage.objects.first().team_image
 
+        heads = HomeTitle.objects.all()
+
+        def a_f(x):
+            return len(heads) if x == 1 else x - 1
+
+        def b_f(x):
+            return 1 if x == len(heads) else x + 1
+
+        context["heads"] = [
+            (a_f(i + 1), i + 1, b_f(i + 1), h) for i, h in enumerate(heads)
+        ]
+
         return context
+
+
+class HomeTitle(MyPage):
+    class Meta:
+        verbose_name = "首页头部轮播"
+
+    text_row1 = models.CharField(max_length=250, blank=True)
+    text_row2 = models.CharField(max_length=250, blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("text_row1"),
+        FieldPanel("text_row2"),
+    ]
 
 
 class WorksCasesPage(MyPage):

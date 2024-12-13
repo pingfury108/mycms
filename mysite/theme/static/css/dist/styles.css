@@ -2522,6 +2522,10 @@ input.tab:checked + .tab-content,
   flex: none;
 }
 
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -2642,6 +2646,10 @@ input.tab:checked + .tab-content,
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .truncate {

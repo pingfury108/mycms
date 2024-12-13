@@ -10,26 +10,27 @@
 
 <section class="py-6 bg-[#fdbb01]">
     <div class="carousel w-full h-96 hidden sm:block">
-        <div id="slide1" class="carousel-item relative lg:w-[1800px] h-full mx-auto grid grid-cols-12">
+        {% for a, i, b, h in heads %}
+        <div id="slide{{ i }}" class="carousel-item relative lg:w-[1800px] h-full mx-auto grid grid-cols-12">
             <div class="h-full flex items-center">
-                <a href="#slide4" class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
+                <a href="#slide{{ a }}" class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
                     <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5"
                             d="M15 19l-7-7 7-7" />
                     </svg>
                 </a>
             </div>
-            <div class="container mx-auto h-full relative col-span-10">
+            <div class="container mx-auto h-full col-span-10">
                 <div class="flex h-full items-center">
                     <div class="text-my-blue w-full px-4">
-                        <p class="text-2xl md:text-3xl font-bold mb-4">以视觉创意提升品牌价值为己任</p>
-                        <p class="mb-2">积极开展与百强企业的战略合作</p>
-                        <p class="">也协助新兴品牌的崛起</p>
+                        <p class="text-2xl md:text-3xl font-bold mb-4">{{ h.title }}</p>
+                        <p class="mb-2">{{ h.text_row1 }}</p>
+                        <p class="">{{ h.text_row2 }}</p>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-center">
-                <a href="#slide2" class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
+            <div class="h-full flex items-center">
+                <a href="#slide{{ b }}" class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
                     <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5"
                             d="M9 5l7 7-7 7" />
@@ -37,6 +38,7 @@
                 </a>
             </div>
         </div>
+        {% endfor %}
     </div>
     {% include "home/home_carousel_sm.html" %}
 
@@ -379,7 +381,7 @@
                 <ul class="menu menu-compact">
                     <li>自有印刷厂及设备</li>
                     <li>纪念册/宣传册印刷制作</li>
-                    <li>会议物料制作</li>
+                    <li>���议物料制作</li>
                     <li>会议设备租赁</li>
                     <li>文创产品策划定制</li>
                     <li>企业纪念品定制</li>
@@ -436,7 +438,7 @@
                 <p>强执行</p>
             </div>
             <div class="text-center text-gray-700 leading-relaxed">
-                <p>有效的落地是一个成为品牌的企业必备的前提。自有印刷厂及设备、同时拥有会议专用IED大屏、摄影等设备、专业会场布置能力。</p>
+                <p>有效���落地是一个成为品牌的企业必备的前提。自有印刷厂及设备、同时拥有会议专用IED大屏、摄影等设备、专业会场布置能力。</p>
             </div>
         </div>
     </div>
