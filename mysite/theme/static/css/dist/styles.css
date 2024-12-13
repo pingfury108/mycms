@@ -2457,6 +2457,10 @@ input.tab:checked + .tab-content,
   margin-top: 0.625rem;
 }
 
+.mt-60 {
+  margin-top: 15rem;
+}
+
 .block {
   display: block;
 }
@@ -2591,6 +2595,10 @@ input.tab:checked + .tab-content,
 
 .h-\[290px\] {
   height: 290px;
+}
+
+.h-\[155px\] {
+  height: 155px;
 }
 
 .w-1\/2 {
@@ -2769,6 +2777,10 @@ input.tab:checked + .tab-content,
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -2821,6 +2833,10 @@ input.tab:checked + .tab-content,
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.place-self-end {
+  place-self: end;
 }
 
 .overflow-hidden {
