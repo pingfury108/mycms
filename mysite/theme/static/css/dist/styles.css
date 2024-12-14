@@ -2745,6 +2745,10 @@ input.tab:checked + .tab-content,
   height: 93px;
 }
 
+.h-\[844px\] {
+  height: 844px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
