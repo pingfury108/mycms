@@ -2291,6 +2291,14 @@ input.tab:checked + .tab-content,
   right: 0.5rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -2493,6 +2501,22 @@ input.tab:checked + .tab-content,
   margin-bottom: 11rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mb-1\.5 {
+  margin-bottom: 0.375rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-32 {
+  margin-top: 8rem;
+}
+
 .block {
   display: block;
 }
@@ -2677,6 +2701,50 @@ input.tab:checked + .tab-content,
   height: 36px;
 }
 
+.h-\[430px\] {
+  height: 430px;
+}
+
+.h-\[247px\] {
+  height: 247px;
+}
+
+.h-\[183px\] {
+  height: 183px;
+}
+
+.h-\[336px\] {
+  height: 336px;
+}
+
+.h-\[223px\] {
+  height: 223px;
+}
+
+.h-1\/3 {
+  height: 33.333333%;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-\[565px\] {
+  height: 565px;
+}
+
+.h-\[326px\] {
+  height: 326px;
+}
+
+.h-\[93px\] {
+  height: 93px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -2797,6 +2865,18 @@ input.tab:checked + .tab-content,
   width: 100px;
 }
 
+.w-\[255px\] {
+  width: 255px;
+}
+
+.w-\[256px\] {
+  width: 256px;
+}
+
+.w-\[215px\] {
+  width: 215px;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -2815,6 +2895,10 @@ input.tab:checked + .tab-content,
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .cursor-pointer {
@@ -2877,6 +2961,10 @@ input.tab:checked + .tab-content,
   place-items: center;
 }
 
+.content-end {
+  align-content: flex-end;
+}
+
 .items-end {
   align-items: flex-end;
 }
@@ -2895,6 +2983,10 @@ input.tab:checked + .tab-content,
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-items-start {
+  justify-items: start;
 }
 
 .gap-1 {
@@ -2937,6 +3029,14 @@ input.tab:checked + .tab-content,
   gap: 6rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2965,6 +3065,10 @@ input.tab:checked + .tab-content,
 
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .truncate {
@@ -3407,6 +3511,11 @@ input.tab:checked + .tab-content,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-my-black {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -3458,6 +3567,10 @@ input.tab:checked + .tab-content,
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.hover\:h-\[230px\]:hover {
+  height: 230px;
 }
 
 .hover\:bg-\[\#08117e\]:hover {
