@@ -7,44 +7,43 @@
 
 {% block content %}
 
-<section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center h-96 flex justify-center items-center lg:w-[1700px]">
-        <h1 class="text-my-blue text-8xl font-bold mb-8">G-EAGLE DESIGN</h1>
+<section class="bg-[#bed5ff] h-[506px]">
+    <div class="container mx-auto text-center flex justify-center items-center lg:w-[1700px]">
+        <p class="text-my-blue text-8xl font-bold mt-52">G-EAGLE DESIGN</p>
     </div>
 </section>
 
-<section class="py-12 lg:lg:w-[1700px] mx-auto">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-my-blue mb-4 leading-tight">专业提供宣传册设计 为了客户的成功而努力</h2>
-        <div class="pt-4"></div>
-
-        <div class="max-w-3xl mx-auto space-y-3">
-            <p class="text-xs md:text-sm text-gray-700">以大品牌战略体系，结合品牌发展策略及定位，深度挖掘品牌核心价值，高屋建瓴地为客户量身定制视觉设计解决方案，并提供全程落地指导。
+<section class="lg:w-[1700px] mx-auto">
+    <div class="mx-auto text-center mt-20">
+        <p class="text-lg md:text-xl lg:text-2xl font-bold text-my-blue mb-4 leading-tight">专业提供宣传册设计 为了客户的成功而努力</p>
+        <div class="mt-12 w-full">
+            <p class="mb-2 text-xs md:text-sm ">以大品牌战略体系，结合品牌发展策略及定位，深度挖掘品牌核心价值，高屋建瓴地为客户量身定制视觉设计解决方案，并提供全程落地指导。
             </p>
-            <p class="text-xs md:text-sm text-gray-700">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务</p>
+            <p class="mb-2 text-xs md:text-sm text-gray-700">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务
+            </p>
             <p class="text-xs md:text-sm text-gray-700">严谨务实地为客户提供专业的视觉设计全流程服务, 始终提升品牌价值为己任.</p>
         </div>
     </div>
 </section>
 
-<section class="py-8">
-    <div class="container mx-auto px-4 lg:w-[1700px]">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16 pt-2">
+<section class="mt-4">
+    <div class="mx-auto lg:w-[1700px] mt-16">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
             <div
-                class="hover:bg-my-gold p-4 hover:text-my-blue text-center shadow-md h-24 flex items-center justify-center">
-                <h3 class="text-lg font-semibold">周年纪念册设计</h3>
+                class="hover:bg-my-gold hover:text-my-blue text-center border  h-[84px] w-[372px] flex items-center justify-center">
+                <p class="text-lg font-semibold">周年纪念册设计</p>
             </div>
             <div
-                class="hover:bg-my-gold p-4 hover:text-my-blue text-center shadow-md h-24 flex items-center justify-center">
-                <h3 class="text-lg font-semibold">企业宣传册设计</h3>
+                class="hover:bg-my-gold hover:text-my-blue text-center border  h-[84px] w-[372px] flex items-center justify-center">
+                <p class="text-lg font-semibold">企业宣传册设计</p>
             </div>
             <div
-                class="hover:bg-my-gold p-4 hover:text-my-blue text-center shadow-md h-24 flex items-center justify-center">
-                <h3 class="text-lg font-semibold">产品画册设计</h3>
+                class="hover:bg-my-gold hover:text-my-blue text-center border  h-[84px] w-[372px] flex items-center justify-center">
+                <p class="text-lg font-semibold">产品画册设计</p>
             </div>
             <div
-                class="hover:bg-my-gold hover:text-my-blue p-4 text-center shadow-md h-24 flex items-center justify-center">
-                <h3 class="text-lg font-semibold">印刷制作</h3>
+                class="hover:bg-my-gold hover:text-my-blue text-center border  h-[84px] w-[372px] flex items-center justify-center">
+                <p class="text-lg font-semibold">印刷制作</p>
             </div>
         </div>
     </div>
@@ -52,36 +51,37 @@
 
 {% include "home/cases_carousel.html" %}
 
+<hr class="mt-20" />
+
+
 <section>
-    <div class="container mx-auto px-4 lg:w-[1700px]">
-
+    <div class=" mx-auto px-4 lg:w-[1700px] flex mt-12 gap-24 mb-44">
         {% block item %}
-
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
-            <div class="space-y-4 lg:col-span-3 grid grid-cols-3 gap-2">
-                {%for child_page in news_all %}
-                {% image child_page.image fill-400x300 as img %}
-                <div class="p-6 col-span-1">
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full">
+        <div class="grid grid-cols-1 gap-10 w-[1166px]">
+            {%for child_page in news_all %}
+            <div class="flex gap-8 h-[230px]">
+                <div class="w-[490px] h-full">
+                    {% image child_page.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
                 </div>
-                <div class="col-span-2">
+                <div class="">
                     <p class="text-xl">{{ child_page.title }}</p>
                     <div class="py-5">
                         {{ child_page.body | richtext }}
                     </div>
-                    <button class="btn btn-sm"><a href="{% pageurl child_page %}">查看更多+</a></button>
+                    <button class="btn btn-sm w-[100px] h-[36px]"><a href="{% pageurl child_page %}">查看更多+</a></button>
                 </div>
-                {% endfor %}
             </div>
-            <div class="bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
-                <h3 class="text-xl font-bold mb-4">热门推荐</h3>
-                <hr class="my-8">
-                {%for child_page in news_all %}
-                <p class="text-gray-600 leading-relaxed">
-                    <a href="{% pageurl child_page %}" class="link link-hover">{{ child_page.title }}</a>
-                </p>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
+        <div class="w-[430px] bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
+            <p class="text-xl font-bold mb-4">热门推荐</p>
+            <hr class="my-8">
+            {%for child_page in news_all %}
+            <p class="text-gray-600 leading-relaxed">
+                <a href="{% pageurl child_page %}" class="link link-hover">{{ child_page.title }}</a>
+            </p>
+            {% endfor %}
         </div>
 
         {% endblock item %}

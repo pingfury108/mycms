@@ -12,31 +12,31 @@
 
 {% block content %}
 
-<section class="bg-[#bed5ff] py-8">
-    <div class="container mx-auto text-center lg:w-[1700px] h-96 flex justify-center items-center">
-        <h2 class="text-2xl font-semibold text-my-blue">为客户创造可持续价值,让客户的利益最大化</h2>
+<section class="bg-[#bed5ff] py-8 h-[506px]">
+    <div class=" mx-auto text-center lg:w-[1700px] flex justify-center items-center">
+        <h2 class="text-3xl font-semibold text-my-blue mt-64">为客户创造可持续价值,让客户的利益最大化</h2>
     </div>
 </section>
 
-<section class="py-16">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-my-blue">
-            <div class="hover:bg-my-gold p-8  text-center cursor-pointer">
+<section class="">
+    <div class="lg:w-[1700px] mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-my-blue mt-16">
+            <div class="hover:bg-my-gold p-8  text-center cursor-pointer border">
                 <h3 class="text-lg mb-2">品牌整体规划</h3>
                 <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
                 <p class="text-xs">品牌定位策略、品牌文化梳理、品牌系统构建</p>
             </div>
-            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer">
+            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer border">
                 <h3 class="text-lg mb-2">产品品牌设计</h3>
                 <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
                 <p class="text-xs">产品包装设计、产品形象设计、产品推广设计</p>
             </div>
-            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer">
+            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer border">
                 <h3 class="text-lg mb-2">品牌整合传播</h3>
                 <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
                 <p class="text-xs">品牌推广设计、品牌活动设计、品牌空间设计</p>
             </div>
-            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer">
+            <div class="hover:bg-my-gold  p-8  text-center cursor-pointer border">
                 <h3 class="text-lg mb-2">会议手册设计</h3>
                 <div class="w-12 h-0.5 bg-gray-400 mx-auto my-4"></div>
                 <p class="text-xs">会议活动策划、活动文创开发、活展示搭建</p>
@@ -45,15 +45,15 @@
     </div>
 </section>
 
-<section class="py-4">
-    <div class="container mx-auto lg:w-[1700px] px-4">
-        <p class="text-lg md:text-xl lg:text-2xl font-bold mb-8 text-my-blue">金属品牌创意--国内领先的宣传策划与视觉设计公司</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<section class="">
+    <div class="mx-auto lg:w-[1700px]">
+        <p class="text-lg md:text-xl lg:text-2xl font-bold mb-8 text-my-blue mt-16">金属品牌创意--国内领先的宣传策划与视觉设计公司</p>
+        <div class="flex flex-wrap gap-2.5 mt-6 w-full">
             {% for child_page in items %}
-            <div class="relative overflow-hidden group">
-                <a href="{% pageurl child_page %}" class="block h-full">
-                    {% image child_page.images.first.image fill-400x300 as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-64 object-cover">
+            <div class="relative overflow-hidden group h-[360px] w-[560px]">
+                <a href="{% pageurl child_page %}" class="">
+                    {% image child_page.images.first.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
                     <div
                         class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="text-white text-left ml-4 mb-4">
@@ -73,16 +73,18 @@
     </div>
 </section>
 
-<section class="bg-my-gold py-12 hidden sm:block">
-    <div class="container mx-auto lg:w-[1700px] text-center px-4 text-my-blue">
-        <p class="text-xl mb-4">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
+<section class="bg-my-gold mt-20 h-[300px] hidden sm:block">
+    <div class=" mx-auto lg:w-[1700px] text-center pt-20 text-my-blue">
+        <p class="text-3xl mb-3">每个梦想，我们都将鼎力相助</p>
+        <p class="text-3xl mb-3">积极开展与具有百强企业合作，也全力协助新兴品牌崛起。</p>
         <div class="w-12 h-0.5 bg-my-blue mx-auto my-4"></div>
-        <p class="">1368 355 5200 / 010-62924170</p>
+        <p class="text-xl">1368 355 5200 / 010-62924170</p>
     </div>
 </section>
 
 <section class="lg:hidden block bg-my-gold">
-    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 lg:w-[1700px]">
+    <div class="
+              mx-auto grid grid-cols-1 lg:grid-cols-2 h-48 lg:w-[1700px]">
         <div class="text-center pt-20">
             <p class="text-my-blue text-2xl font-bold">选择专业，让您更高效</p>
             <p class="text-gray-500 uppercase tracking-wider">CHOOSE A MAJOR TO MAKE YOU MORE EFFICIENT</p>
