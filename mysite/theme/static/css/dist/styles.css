@@ -2601,6 +2601,18 @@ input.tab:checked + .tab-content,
   height: 155px;
 }
 
+.h-\[408px\] {
+  height: 408px;
+}
+
+.h-\[20px\] {
+  height: 20px;
+}
+
+.h-\[135px\] {
+  height: 135px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -3102,6 +3114,14 @@ input.tab:checked + .tab-content,
   padding-top: 115px;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3354,6 +3374,10 @@ input.tab:checked + .tab-content,
 .hover\:grayscale-0:hover {
   --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.group:hover .group-hover\:block {
+  display: block;
 }
 
 .group:hover .group-hover\:opacity-100 {
