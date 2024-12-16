@@ -1,0 +1,20 @@
+:8004 {
+    log {
+        output stdout
+        format json
+    }
+
+    handle /static/* {
+        root * /data/
+        file_server
+    }
+
+    handle /media* {
+        root * /data/
+        file_server
+    }
+
+    handle /* {
+        reverse_proxy mycms:8000
+    }
+}

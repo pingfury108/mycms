@@ -1,0 +1,19 @@
+services:
+  mycms:
+    image: ghcr.pingfury.top/pingfury108/mycms:latest
+    environment:
+      DJANGO_SETTINGS_MODULE: mysite.settings.production 
+      CSRF_TRUSTED_ORIGINS: "https://example.com,https://1example.com"
+    volumes:
+      - ./db.sqlite3:/app/mysite/db.sqlite3
+      - ./media:/app/mysite/media
+    ports:
+      - 8003:8000
+  caddy:
+    image: docker.pingfury.top/caddy:latest
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./media:/mycms/media
+      - ./static:/mycms/static
