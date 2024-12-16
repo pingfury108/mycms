@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "tailwind",
     "theme",
-    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -59,7 +58,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "mysite.urls"
@@ -198,3 +196,5 @@ WAGTAILDOCS_EXTENSIONS = [
 TAILWIND_APP_NAME = "theme"
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
+ALLOWED_HOSTS = ["*"]
