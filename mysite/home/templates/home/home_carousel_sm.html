@@ -1,23 +1,31 @@
 {% load wagtailcore_tags %}
 
-<div class="carousel w-full lg:hidden block">
-    <div id="item1" class="carousel-item w-full">
-        <div id="slide1" class="carousel-item relative w-full">
-            <div class="container mx-auto h-full relative">
-                <div class="flex h-full justify-center items-center">
-                    <div class="text-[#08117e] w-full md:w-2/3 px-4">
-                        <p class="text-2xl md:text-3xl font-bold mb-4">以视觉创意提升品牌价值为己任</p>
-                        <p class="mb-2">积极开展与百强企业的战略合作</p>
-                        <p class="">也协助新兴品牌的崛起</p>
-                    </div>
-                </div>
-            </div>
+<div class="lg:hidden block  h-[820px]">
+  <div class="carousel w-full flex h-full">
+    {% for a, i, b, h in heads %}
+    <div id="slide{{ i }}" class="carousel-item w-full">
+      <div class="container mx-auto h-full ">
+        <div class="flex h-full items-center">
+          <div class="text-my-blue w-full px-4">
+            <p class="text-2xl md:text-3xl font-bold mb-4">{{ h.title }}</p>
+            <p class="mb-2">{{ h.text_row1 }}</p>
+            <p class="">{{ h.text_row2 }}</p>
+          </div>
         </div>
+        <div class="flex w-full justify-center gap-2 py-2">
+          {% for _, ii, _, h in heads %}
+          {% if ii == i %}
+          <a href="#slide{{ ii }}" class="w-4 h-4 rounded-full bg-black"></a>
+          {% else %}
+          <a href="#slide{{ ii }}" class="w-4 h-4 rounded-full bg-white"></a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
-    <div class="flex w-full justify-center gap-2 py-2">
-        <a href="#item1" class="w-4 h-4 rounded-full bg-white"></a>
-        <a href="#item2" class="w-4 h-4 rounded-full bg-white"></a>
-        <a href="#item3" class="w-4 h-4 rounded-full bg-white"></a>
-        <a href="#item4" class="w-4 h-4 rounded-full bg-white"></a>
-    </div>
+    {% endfor %}
+
+  </div>
+
 </div>

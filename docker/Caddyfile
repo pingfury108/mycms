@@ -5,12 +5,12 @@
     }
 
     handle /static/* {
-        root * /data/
+        root * /mycms/
         file_server
     }
 
-    handle /media* {
-        root * /data/
+    handle /media/* {
+        root * /mycms/
         file_server
     }
 
