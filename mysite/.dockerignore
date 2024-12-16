@@ -37,3 +37,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# git
+.git
+.github
