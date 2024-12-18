@@ -9,495 +9,499 @@
 {% block content %}
 
 <section class="bg-[#fdbb01]">
-  <div class="hidden lg:block">
-    <div class="lg:w-[1800px] h-[664px] mx-auto grid grid-cols-12">
-      <div class="h-full flex items-center left-arrow">
-        <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
-          <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5"
-              d="M15 19l-7-7 7-7" />
-          </svg>
-        </div>
-      </div>
-      <div class="carousel h-full col-span-10">
-        {% for a, i, b, h in heads %}
-        <div id="slide{{ i }}" class="carousel-item rounded-box w-full">
-          <div class="container mx-auto h-full ">
-            <div class="flex h-full items-center">
-              <div class="text-my-blue w-full px-4">
-                <p class="text-2xl md:text-3xl font-bold mb-4">{{ h.title }}</p>
-                <p class="mb-2">{{ h.text_row1 }}</p>
-                <p class="">{{ h.text_row2 }}</p>
-              </div>
+    <div class="hidden lg:block">
+        <div class="lg:w-[1800px] h-[664px] mx-auto grid grid-cols-12">
+            <div class="h-full flex items-center left-arrow">
+                <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5"
+                            d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
             </div>
-          </div>
+            <div class="carousel h-full col-span-10">
+                {% for a, i, b, h in heads %}
+                <div id="slide{{ i }}" class="carousel-item rounded-box w-full">
+                    <div class="container mx-auto h-full ">
+                        <div class="flex h-full items-center">
+                            <div class="text-my-blue w-full px-4">
+                                <p class="text-2xl md:text-3xl font-bold mb-4">{{ h.title }}</p>
+                                <p class="mb-2">{{ h.text_row1 }}</p>
+                                <p class="">{{ h.text_row2 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="h-full flex items-center right-arrow">
+                <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5"
+                            d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
         </div>
-        {% endfor %}
-      </div>
-      <div class="h-full flex items-center right-arrow">
-        <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
-          <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.5" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
     </div>
-  </div>
-  {% include "home/home_carousel_sm.html" %}
+    {% include "home/home_carousel_sm.html" %}
 
-  <div class="w-[1700px] mx-auto hidden md:grid grid-cols-4 h-[156px] items-end ">
-    <div class="text-white bg-[#fdbb01] flex flex-row justify-end p-6">
-      <div class="place-self-end">
-        <p class="text-xl font-bold">服务内容</p>
-        <p>OUR SERVICES</p>
-      </div>
-      <div class="flex items-center">
-        <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </div>
-    <div class="dropdown dropdown-hover dropdown-top">
-      <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
-      <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-4  h-[135px] w-full dropdown-content">
-        <p class="font-bold mb-2">周年纪念册设计</p>
-        <p class="text-sm">周年庆纪念册</p>
-        <p class="text-sm">人物纪念册</p>
-        <p class="text-sm">项目竣工/历程纪念册</p>
-        <div class="absolute bottom-2 right-2 flex items-center">
-          <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          </svg>
+    <div class="w-[1700px] mx-auto hidden md:grid grid-cols-4 h-[156px] items-end ">
+        <div class="text-white text-[1.9rem] font-puhui font-bold bg-[#fdbb01] flex flex-row justify-end p-6">
+            <div class="place-self-end">
+                <p class="">服务内容</p>
+                <p>OUR SERVICES</p>
+            </div>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="dropdown dropdown-hover dropdown-top">
-      <div tabindex="0" role="" class="bg-my-blue h-[20px]"></div>
-      <div tabindex="0" class="bg-my-blue text-my-gold px-6 py-4  h-[135px] w-full dropdown-content">
-        <p class="font-bold mb-2">会议活动策划设计</p>
-        <p class="text-sm">周年会议主视觉创意设计</p>
-        <p class="text-sm">论坛\会议活动策划布置</p>
-        <p class="text-sm">年会\活动\会议手册</p>
-        <div class="absolute bottom-2 right-2 flex items-center">
-          <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          </svg>
+        <div class="dropdown dropdown-hover dropdown-top">
+            <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
+            <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-1  h-[135px] w-full dropdown-content">
+                <p class="font-puhui font-medium text-[2.4rem]">周年纪念册设计</p>
+                <p class="font-puhui text-[1.1rem]">周年庆纪念册</p>
+                <p class="font-puhui text-[1.1rem]">人物纪念册</p>
+                <p class="font-puhui text-[1.1rem]">项目竣工/历程纪念册</p>
+                <div class="absolute bottom-2 right-2 flex items-center">
+                    <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="dropdown dropdown-hover dropdown-top">
-      <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
-      <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-4  h-[135px] w-full dropdown-content">
-        <p class="font-bold mb-2">企业宣传册设计</p>
-        <p class="text-sm">集团\企业形象画册</p>
-        <p class="text-sm">企业文化宣传手册</p>
-        <p class="text-sm">产品宣传画册</p>
-        <div class="absolute bottom-2 right-2 flex items-center">
-          <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
-          </svg>
+        <div class="dropdown dropdown-hover dropdown-top">
+            <div tabindex="0" role="" class="bg-my-blue h-[20px]"></div>
+            <div tabindex="0" class="bg-my-blue text-my-gold px-6 py-1  h-[135px] w-full dropdown-content">
+                <p class="font-puhui font-medium text-[2.4rem]">会议活动策划设计</p>
+                <p class="font-puhui text-[1.1rem]">周年会议主视觉创意设计</p>
+                <p class="font-puhui text-[1.1rem]">论坛\会议活动策划布置</p>
+                <p class="font-puhui text-[1.1rem]">年会\活动\会议手册</p>
+                <div class="absolute bottom-2 right-2 flex items-center">
+                    <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="dropdown dropdown-hover dropdown-top">
+            <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
+            <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-1  h-[135px] w-full dropdown-content">
+                <p class="font-puhui font-medium text-[2.4rem]">企业宣传册设计</p>
+                <p class="font-puhui text-[1.1rem]">集团\企业形象画册</p>
+                <p class="font-puhui text-[1.1rem]">企业文化宣传手册</p>
+                <p class="font-puhui text-[1.1rem]">产品宣传画册</p>
+                <div class="absolute bottom-2 right-2 flex items-center">
+                    <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
 </section>
 
 <section class="">
-  <div class="lg:w-[1700px] mx-auto mt-28 text-center h-[300px]">
-    <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-my-blue leading-tight">金鹰品牌创 × 品牌策略 × 视觉设计 =
-      谋大品牌</h2>
-    <p class="text-xs md:text-base mt-8">文案写作 + 画册设计 + 周年纪念册 + 会议活动 + 印刷制作</p>
-    <div class="max-w-3xl mx-auto space-y-3 mt-20">
-      <p class="text-xs md:text-sm">以策略思维为先导，注重品牌长效发展，深度挖掘品牌核心价值，</p>
-      <p class="text-xs md:text-sm">以品牌塑造灵魂，用美学创造价值，创作差异化视觉符号，持续创造品牌溢价空间；</p>
-      <p class="text-xs md:text-sm">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务</p>
+    <div class="lg:w-[1700px] mx-auto mt-[190px] text-center">
+        <p class="text-[4.9rem] text-my-blue font-puhui">金鹰品牌创 × 品牌策略 × 视觉设计 = 谋大品牌</p>
+        <p class="text-[2.4rem] font-puhui  mt-8">文案写作 + 画册设计 + 周年纪念册 + 会议活动 + 印刷制作</p>
+        <div class="mx-auto mt-[110px]">
+            <p class="text-[1.49rem] font-puhui">以策略思维为先导，注重品牌长效发展，深度挖掘品牌核心价值，</p>
+            <p class="text-[1.49rem] font-puhui">以品牌塑造灵魂，用美学创造价值，创作差异化视觉符号，持续创造品牌溢价空间；</p>
+            <p class="text-[1.49rem] font-puhui">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务</p>
+        </div>
     </div>
-  </div>
 </section>
 
 {% include "home/home_card_0.html"%}
 
-<hr class="my-3.5" />
+<hr class="mt-[110px]" />
 
 <section class="">
-  <div class="lg:w-[1700px] mx-auto">
-    <p class="text-lg lg:text-2xl font-bold my-3.5 text-my-blue">金属品牌创意-国内领先的宣传策划与视觉设计公司</p>
-  </div>
-  <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-2.5">
-    <div class="flex w-full gap-2.5 lg:h-[669px]">
-      {% with case_item_main as item %}
-      {% if item %}
-      <div class="relative overflow-hidden group w-full">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-my-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      {% endif %}
-      {% endwith %}
+    <div class="lg:w-[1700px] mx-auto">
+        <p class="mt-[30px] flex justify-between items-center">
+            <span class="text-my-blue text-[1.499rem] font-puhui font-medium">金属品牌创意-国内领先的宣传策划与视觉设计公司</span>
+            <span class="text-[0.99rem] font-puhui font-medium justify-self-end">
+                金鹰策略先后为：清华大学、民航局、王府井，万科、国投、港湾航空等提供品牌战略及多元宣传册等视觉设计服务.</span>
+        </p>
     </div>
-    <div class="flex flex-row gap-2.5 w-full lg:h-[669px]">
-      {% with case_item_row1_left as item %}
-      {% if item %}
-      <div class="relative overflow-hidden group w-[1190px]">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
+    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[8px]">
+        <div class="flex w-full gap-[8px] lg:h-[669px]">
+            {% with case_item_main as item %}
+            {% if item %}
+            <div class="relative overflow-hidden group w-full">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-my-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left pl-[60px] pb-[50px] w-full">
+                            <p class="text-[2.99rem] font-puhui font-bold">{{ item.title }}</p>
+                            <p class="text-[1.74rem] font-puhui mt-[55px]">
+                                <span class="">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-[1.74rem] font-puhui mt-1">
+                                <span class="">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-      {% endwith %}
 
-      {% with case_item_row1_right as item %}
-      {% if item %}
-      <div class="relative overflow-hidden group w-[500px]">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
+            {% endif %}
+            {% endwith %}
+        </div>
+        <div class="flex flex-row gap-[8px] w-full lg:h-[669px]">
+            {% with case_item_row1_left as item %}
+            {% if item %}
+            <div class="relative overflow-hidden group w-[1190px]">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left ml-4 mb-4">
+                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-      {% endwith %}
+            {% endif %}
+            {% endwith %}
 
+            {% with case_item_row1_right as item %}
+            {% if item %}
+            <div class="relative overflow-hidden group w-[500px]">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left ml-4 mb-4">
+                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endwith %}
+
+        </div>
+        <div class="flex flex-row gap-[8px] w-full lg:h-[669px]">
+            {% with case_item_row2_left as item %}
+            {% if item %}
+            <div class="relative overflow-hidden group col-span-1 h-full w-[500px]">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left ml-4 mb-4">
+                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            {% with case_item_row2_right as item %}
+            {% if item %}
+            <div class="relative overflow-hidden group col-span-3 h-full w-[1190px]">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left ml-4 mb-4">
+                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="grid grid-cols-2 gap-[8px] w-full lg:h-[669px]">
+            {% for item in case_items %}
+            <div class="relative overflow-hidden group col-span-1 ">
+                <a href="{% pageurl item %}" class="block h-full">
+                    {% for image in item.images.all %}
+                    {% if image.is_home %}
+                    {% image image.image original as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                    {% endif %}
+                    {% endfor %}
+                    <div
+                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-left ml-4 mb-4">
+                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">所属行业:</span> {{ item.industry }}
+                            </p>
+                            <p class="text-base mt-1">
+                                <span class="font-medium">服务内容:</span> {{ item.describe }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    <div class="flex flex-row gap-2.5 w-full lg:h-[669px]">
-      {% with case_item_row2_left as item %}
-      {% if item %}
-      <div class="relative overflow-hidden group col-span-1 h-full w-[500px]">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-      {% endwith %}
-
-      {% with case_item_row2_right as item %}
-      {% if item %}
-      <div class="relative overflow-hidden group col-span-3 h-full w-[1190px]">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-      {% endwith %}
-    </div>
-
-    <div class="grid grid-cols-2 gap-2.5 w-full lg:h-[669px]">
-      {% for item in case_items %}
-      <div class="relative overflow-hidden group col-span-1 ">
-        <a href="{% pageurl item %}" class="block h-full">
-          {% for image in item.images.all %}
-          {% if image.is_home %}
-          {% image image.image original as img %}
-          <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-          {% endif %}
-          {% endfor %}
-          <div
-            class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="text-white text-left ml-4 mb-4">
-              <h4 class="text-xl font-medium">{{ item.title }}</h4>
-              <p class="text-base mt-1">
-                <span class="font-medium">所属行业:</span> {{ item.industry }}
-              </p>
-              <p class="text-base mt-1">
-                <span class="font-medium">服务内容:</span> {{ item.describe }}
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
 </section>
 
 
 <section class="bg-my-gold flex justify-center items-center mt-24  h-[250px]">
-  <div class="mx-auto text-center text-my-blue lg:w-[1700px]">
-    <p class="mb-4 lg:text-2xl font-bold">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
-    <p class="text-sm">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
-  </div>
+    <div class="mx-auto text-center text-my-blue lg:w-[1700px]">
+        <p class="mb-4 lg:text-2xl font-bold">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
+        <p class="text-sm">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
+    </div>
 </section>
 
 
 <section class="">
-  <div class="hidden sm:block">
-    <div class="lg:w-[1700px] mx-auto flex flex-row justify-center place-items-start mt-36">
-      <div>
-        <div
-          class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
-          <p>文案</p>
-          <p>策划</p>
+    <div class="hidden sm:block">
+        <div class="lg:w-[1700px] mx-auto flex flex-row justify-center place-items-start mt-36">
+            <div>
+                <div
+                    class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
+                    <p>文案</p>
+                    <p>策划</p>
+                </div>
+                <ul class="menu menu-compact mt-10">
+                    <li>诉求分析/评估</li>
+                    <li>品牌文化梳理</li>
+                    <li>品牌调性界定</li>
+                    <li>传播路径规划</li>
+                    <li>框架结构梳理</li>
+                    <li>核心诉求及思想提炼</li>
+                    <li>品牌故事策划</li>
+                    <li>系统性文案撰写</li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center">
+                {% include "home/right_arrow.html" %}
+            </div>
+            <div>
+                <div
+                    class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
+                    <p>视觉</p>
+                    <p>创意</p>
+                </div>
+                <ul class="menu menu-compact mt-10">
+                    <li>LOGO元素分解与提炼</li>
+                    <li>主视觉元素创意</li>
+                    <li>辅助元素设计</li>
+                    <li>主视觉与辅助元素组合</li>
+                    <li>主视觉规范与统一</li>
+                    <li>主视觉延展性应用</li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center">
+                {% include "home/right_arrow.html" %}
+            </div>
+            <div>
+                <div
+                    class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
+                    <p>画册</p>
+                    <p>设计</p>
+                </div>
+                <ul class="menu menu-compact mt-10">
+                    <li>主视觉与四封创作与设计</li>
+                    <li>章节页面规划与统一</li>
+                    <li>历史大事记设计</li>
+                    <li>内页视觉延展设计与统一</li>
+                    <li>印刷工艺呈现与设计</li>
+                    <li>装帧形式设计</li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center">
+                {% include "home/right_arrow.html" %}
+            </div>
+            <div>
+                <div
+                    class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
+                    <p>会议</p>
+                    <p>主视觉</p>
+                </div>
+                <ul class="menu menu-compact mt-10">
+                    <li>会议活动策划</li>
+                    <li>会议主视觉创意与设计</li>
+                    <li>会议背景板设计</li>
+                    <li>会议物料延展设计</li>
+                    <li>会议手册设计</li>
+                    <li>会议胸牌/桌签设计</li>
+                    <li>会议展板/丽屏/海报设计</li>
+                    <li>会场搭建布置</li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center">
+                {% include "home/right_arrow.html" %}
+            </div>
+            <div>
+                <div
+                    class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
+                    <p>印刷</p>
+                    <p>制作</p>
+                </div>
+                <ul class="menu menu-compact mt-10">
+                    <li>自有印刷厂及设备</li>
+                    <li>纪念册/宣传册印刷制作</li>
+                    <li>会议物料制作</li>
+                    <li>会议设备租赁</li>
+                    <li>文创产品策划定制</li>
+                    <li>企业纪念品定制</li>
+                    <li>包装设计制作</li>
+                </ul>
+            </div>
         </div>
-        <ul class="menu menu-compact mt-10">
-          <li>诉求分析/评估</li>
-          <li>品牌文化梳理</li>
-          <li>品牌调性界定</li>
-          <li>传播路径规划</li>
-          <li>框架结构梳理</li>
-          <li>核心诉求及思想提炼</li>
-          <li>品牌故事策划</li>
-          <li>系统性文案撰写</li>
-        </ul>
-      </div>
-      <div class="flex justify-center items-center">
-        {% include "home/right_arrow.html" %}
-      </div>
-      <div>
-        <div
-          class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
-          <p>视觉</p>
-          <p>创意</p>
-        </div>
-        <ul class="menu menu-compact mt-10">
-          <li>LOGO元素分解与提炼</li>
-          <li>主视觉元素创意</li>
-          <li>辅助元素设计</li>
-          <li>主视觉与辅助元素组合</li>
-          <li>主视觉规范与统一</li>
-          <li>主视觉延展性应用</li>
-        </ul>
-      </div>
-      <div class="flex justify-center items-center">
-        {% include "home/right_arrow.html" %}
-      </div>
-      <div>
-        <div
-          class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
-          <p>画册</p>
-          <p>设计</p>
-        </div>
-        <ul class="menu menu-compact mt-10">
-          <li>主视觉与四封创作与设计</li>
-          <li>章节页面规划与统一</li>
-          <li>历史大事记设计</li>
-          <li>内页视觉延展设计与统一</li>
-          <li>印刷工艺呈现与设计</li>
-          <li>装帧形式设计</li>
-        </ul>
-      </div>
-      <div class="flex justify-center items-center">
-        {% include "home/right_arrow.html" %}
-      </div>
-      <div>
-        <div
-          class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
-          <p>会议</p>
-          <p>主视觉</p>
-        </div>
-        <ul class="menu menu-compact mt-10">
-          <li>会议活动策划</li>
-          <li>会议主视觉创意与设计</li>
-          <li>会议背景板设计</li>
-          <li>会议物料延展设计</li>
-          <li>会议手册设计</li>
-          <li>会议胸牌/桌签设计</li>
-          <li>会议展板/丽屏/海报设计</li>
-          <li>会场搭建布置</li>
-        </ul>
-      </div>
-      <div class="flex justify-center items-center">
-        {% include "home/right_arrow.html" %}
-      </div>
-      <div>
-        <div
-          class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
-          <p>印刷</p>
-          <p>制作</p>
-        </div>
-        <ul class="menu menu-compact mt-10">
-          <li>自有印刷厂及设备</li>
-          <li>纪念册/宣传册印刷制作</li>
-          <li>会议物料制作</li>
-          <li>会议设备租赁</li>
-          <li>文创产品策划定制</li>
-          <li>企业纪念品定制</li>
-          <li>包装设计制作</li>
-        </ul>
-      </div>
     </div>
-  </div>
-  {% include "home/home_wenan_sm.html" %}
+    {% include "home/home_wenan_sm.html" %}
 
 </section>
 
 <section class="hidden sm:block">
-  <div class="mx-auto h-80 flex flex-col justify-center items-center text-center lg:w-[1700px]">
-    <p class="text-3xl font-bold mb-8 text-my-blue">金鹰品牌--核心优势</p>
-    <p class="text-lg">以策略为核心，以创新为本，专业化制作，降本增效，增强企业竞争实力</p>
-  </div>
-  <div class=" mx-auto flex flex-row gap-12 place-items-start justify-center lg:w-[1700px]">
-    <div class="w-1/3 grid place-items-center">
-      <div
-        class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
-        <p>定策略</p>
-        <p>讲故事</p>
-      </div>
-      <div class="text-center leading-relaxed mt-11">
-        <p>SWOT分析及定位策略研究，提炼品牌价值与内核，制定合理有效营销策略，挖掘品牌故事，形成系统诉求文案，提升品牌影响力度；</p>
-      </div>
+    <div class="mx-auto h-80 flex flex-col justify-center items-center text-center lg:w-[1700px]">
+        <p class="text-3xl font-bold mb-8 text-my-blue">金鹰品牌--核心优势</p>
+        <p class="text-lg">以策略为核心，以创新为本，专业化制作，降本增效，增强企业竞争实力</p>
     </div>
+    <div class=" mx-auto flex flex-row gap-12 place-items-start justify-center lg:w-[1700px]">
+        <div class="w-1/3 grid place-items-center">
+            <div
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
+                <p>定策略</p>
+                <p>讲故事</p>
+            </div>
+            <div class="text-center leading-relaxed mt-11">
+                <p>SWOT分析及定位策略研究，提炼品牌价值与内核，制定合理有效营销策略，挖掘品牌故事，形成系统诉求文案，提升品牌影响力度；</p>
+            </div>
+        </div>
 
-    <div class="flex justify-center items-center">
-      {% include "home/right_arrow.html" %}
-    </div>
+        <div class="flex justify-center items-center">
+            {% include "home/right_arrow.html" %}
+        </div>
 
-    <div class="w-1/3 grid place-items-center">
-      <div
-        class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
-        <p>抓创意</p>
-        <p>抓设计</p>
-      </div>
-      <div class="text-center leading-relaxed mt-11">
-        <p>研究品牌定位策略，创作个性化视觉符号，建立统一可持续发展的品牌形象。拥有专业的品牌设计全体系服务能力。</p>
-      </div>
-    </div>
+        <div class="w-1/3 grid place-items-center">
+            <div
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
+                <p>抓创意</p>
+                <p>抓设计</p>
+            </div>
+            <div class="text-center leading-relaxed mt-11">
+                <p>研究品牌定位策略，创作个性化视觉符号，建立统一可持续发展的品牌形象。拥有专业的品牌设计全体系服务能力。</p>
+            </div>
+        </div>
 
-    <div class="flex justify-center items-center">
-      {% include "home/right_arrow.html" %}
-    </div>
+        <div class="flex justify-center items-center">
+            {% include "home/right_arrow.html" %}
+        </div>
 
-    <div class="w-1/3 grid place-items-center">
-      <div
-        class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-[#08117e]8">
-        <p>能印刷</p>
-        <p>强执行</p>
-      </div>
-      <div class="text-center leading-relaxed mt-11">
-        <p>有效落地是一个成为品牌的企业必备的前提。自有印刷厂及设备、同时拥有会议专用IED大屏、摄影等设备、专业会场布置能力。</p>
-      </div>
+        <div class="w-1/3 grid place-items-center">
+            <div
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-[#08117e]8">
+                <p>能印刷</p>
+                <p>强执行</p>
+            </div>
+            <div class="text-center leading-relaxed mt-11">
+                <p>有效落地是一个成为品牌的企业必备的前提。自有印刷厂及设备、同时拥有会议专用IED大屏、摄影等设备、专业会场布置能力。</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="">
-  <div class="mx-auto mt-16 flex justify-center items-center lg:w-[1700px] h-[582px]">
-    {% image team_image original as img %}
-    <img src="{{ img.url }}" class="w-full h-full">
-  </div>
+    <div class="mx-auto mt-16 flex justify-center items-center lg:w-[1700px] h-[582px]">
+        {% image team_image original as img %}
+        <img src="{{ img.url }}" class="w-full h-full">
+    </div>
 </section>
 
 {% include "home/home_connect.html"%}
 
 <section class="">
-  <div class="mx-auto flex flex-row gap-2.5 lg:w-[1700px] mt-9">
-    {% for new in news %}
-    {% image new.image original as img %}
-    <div class="w-[840px]">
-      <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full  h-[290px]">
-      <div class="mt-7">
-        <p class="text-lg">{{ new.title }}</p>
-        <div class="mt-6">
-          {{ new.body | richtext }}
+    <div class="mx-auto flex flex-row gap-2.5 lg:w-[1700px] mt-9">
+        {% for new in news %}
+        {% image new.image original as img %}
+        <div class="w-[840px]">
+            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full  h-[290px]">
+            <div class="mt-7">
+                <p class="text-lg">{{ new.title }}</p>
+                <div class="mt-6">
+                    {{ new.body | richtext }}
+                </div>
+            </div>
         </div>
-      </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 
-  <div class=" mx-auto grid grid-cols-1 md:grid-cols-3 mt-16 lg:w-[1700px]">
-    {% for new in news_all %}
-    <div class="">
-      <p><a href="{% pageurl new %}">{{ new.title}}</a></p>
+    <div class=" mx-auto grid grid-cols-1 md:grid-cols-3 mt-16 lg:w-[1700px]">
+        {% for new in news_all %}
+        <div class="">
+            <p><a href="{% pageurl new %}">{{ new.title}}</a></p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 
 </section>
 
 <section class="bg-my-gold mt-11 hidden sm:block h-[200px]">
-  <div class=" mx-auto text-center  lg:w-[1700px]">
-    <p class="pt-16 text-3xl font-bold text-my-blue"><span class="px-5">品牌形象的-创作者</span><span
-        class="px-5">客户价值的-构建者</span></p>
-    <p class="mt-4 text-xl text-[#c18a78]"><span class="px-2">文字恋</span> <span class="px-2">色彩欲</span> <span
-        class="px-2">追求独特</span>
-      <span>向往品质</span>
-    </p>
-  </div>
+    <div class=" mx-auto text-center  lg:w-[1700px]">
+        <p class="pt-16 text-3xl font-bold text-my-blue"><span class="px-5">品牌形象的-创作者</span><span
+                class="px-5">客户价值的-构建者</span></p>
+        <p class="mt-4 text-xl text-[#c18a78]"><span class="px-2">文字恋</span> <span class="px-2">色彩欲</span> <span
+                class="px-2">追求独特</span>
+            <span>向往品质</span>
+        </p>
+    </div>
 </section>
 
 {% endblock content %}

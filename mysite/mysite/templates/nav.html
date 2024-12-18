@@ -1,10 +1,10 @@
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="navbar bg-base-100 bg-[#fffff] lg:w-[1700px] mx-auto text-my-blue h-[80px]">
+<div
+    class="navbar bg-base-100 bg-[#fffff] lg:w-[1700px] mx-auto text-my-blue h-[60px] font-puhui font-medium text-[1.499rem]">
     <div class="flex-1 my-4">
-        <a class="btn btn-ghost text-xl" href="/">
-            <span class="font-medium">G-EAGLE</span>
-            <span class="font-light">BRAND</span>
+        <a class="btn btn-ghost" href="/">
+            <img src="{% static 'images/nav.png' %}" class="h-full p-2" />
         </a>
     </div>
     <div class="flex-none hidden lg:block my-4">

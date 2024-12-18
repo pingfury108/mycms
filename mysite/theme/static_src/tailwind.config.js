@@ -48,6 +48,9 @@ module.exports = {
         "my-gold": '#EBD2C8',
         "my-black": '#1A1A1A',
         "black": '#1A1A1A',
+      },
+      fontFamily: {
+        'puhui': ['Alibaba PuHui']
       }
     },
   },
