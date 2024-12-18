@@ -12,3 +12,4 @@ wheels/
 media/
 .aider*
 .env
+.DS_Store

@@ -6,16 +6,19 @@
 {% else %}
 <li><a>作品案例</a></li>
 {% endif %}
+
 {% if news_page %}
 <li><a href="{% pageurl news_page %}">新闻动态</a></li>
 {% else %}
 <li><a>新闻动态</a></li>
 {% endif %}
+
 {% if about_page %}
 <li><a href="{% pageurl about_page %}">关于我们</a></li>
 {% else %}
 <li><a>关于我们</a></li>
 {% endif %}
+
 {% if contact_us_page %}
 <li><a href="{% pageurl contact_us_page %}">联系我们</a></li>
 {% else %}

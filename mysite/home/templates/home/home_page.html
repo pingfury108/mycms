@@ -62,7 +62,7 @@
             <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
             <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-1  h-[135px] w-full dropdown-content">
                 <p class="font-puhui font-medium text-[2.4rem]">周年纪念册设计</p>
-                <p class="font-puhui text-[1.1rem]">周年庆纪念册</p>
+                <p class="font-puhui font-regular text-[1.1rem]">周年庆纪念册</p>
                 <p class="font-puhui text-[1.1rem]">人物纪念册</p>
                 <p class="font-puhui text-[1.1rem]">项目竣工/历程纪念册</p>
                 <div class="absolute bottom-2 right-2 flex items-center">
@@ -130,85 +130,28 @@
     </div>
     <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[8px]">
         <div class="flex w-full gap-[8px] lg:h-[669px]">
-            {% with case_item_main as item %}
+            {% with item=case_item_main %}
             {% if item %}
             <div class="relative overflow-hidden group w-full">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-my-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left pl-[60px] pb-[50px] w-full">
-                            <p class="text-[2.99rem] font-puhui font-bold">{{ item.title }}</p>
-                            <p class="text-[1.74rem] font-puhui mt-[55px]">
-                                <span class="">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-[1.74rem] font-puhui mt-1">
-                                <span class="">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
-
             {% endif %}
             {% endwith %}
         </div>
         <div class="flex flex-row gap-[8px] w-full lg:h-[669px]">
-            {% with case_item_row1_left as item %}
+            {% with item=case_item_row1_left %}
             {% if item %}
             <div class="relative overflow-hidden group w-[1190px]">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left ml-4 mb-4">
-                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
+
             {% endwith %}
 
             {% with case_item_row1_right as item %}
             {% if item %}
             <div class="relative overflow-hidden group w-[500px]">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left ml-4 mb-4">
-                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
             {% endwith %}
@@ -218,26 +161,7 @@
             {% with case_item_row2_left as item %}
             {% if item %}
             <div class="relative overflow-hidden group col-span-1 h-full w-[500px]">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left ml-4 mb-4">
-                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
             {% endwith %}
@@ -245,26 +169,7 @@
             {% with case_item_row2_right as item %}
             {% if item %}
             <div class="relative overflow-hidden group col-span-3 h-full w-[1190px]">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left ml-4 mb-4">
-                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
             {% endwith %}
@@ -273,51 +178,41 @@
         <div class="grid grid-cols-2 gap-[8px] w-full lg:h-[669px]">
             {% for item in case_items %}
             <div class="relative overflow-hidden group col-span-1 ">
-                <a href="{% pageurl item %}" class="block h-full">
-                    {% for image in item.images.all %}
-                    {% if image.is_home %}
-                    {% image image.image original as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
-                    {% endif %}
-                    {% endfor %}
-                    <div
-                        class="absolute inset-0 flex items-end justify-start bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="text-white text-left ml-4 mb-4">
-                            <h4 class="text-xl font-medium">{{ item.title }}</h4>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">所属行业:</span> {{ item.industry }}
-                            </p>
-                            <p class="text-base mt-1">
-                                <span class="font-medium">服务内容:</span> {{ item.describe }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                {% include 'home/home_work_case_item.html' %}
             </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
+<div class="divider lg:w-[1700px] mx-auto my-[22px]">
+    <button class="btn btn-xs">
+        {% if works_cases_page %}
+        <a href="{% pageurl works_cases_page %}">View More</a>
+        {% else %}
+        View More
+        {% endif %}
+    </button>
+</div>
 
-<section class="bg-my-gold flex justify-center items-center mt-24  h-[250px]">
+<section class="bg-my-gold flex justify-center items-center  h-[300px]">
     <div class="mx-auto text-center text-my-blue lg:w-[1700px]">
-        <p class="mb-4 lg:text-2xl font-bold">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
-        <p class="text-sm">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
+        <p class="mb-4 font-puhui font-bold text-[3.33rem]">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
+        <p class="font-puhui text-[2.499rem]">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
     </div>
 </section>
 
 
 <section class="">
-    <div class="hidden sm:block">
-        <div class="lg:w-[1700px] mx-auto flex flex-row justify-center place-items-start mt-36">
-            <div>
+    <div class="lg:w-[1700px] mx-auto mt-[140px] mb-[92px]">
+        <div class="lg:w-[1560px] flex justify-center  place-items-start flex-wrap">
+            <div class="">
                 <div
                     class="border hover:bg-my-gold h-[200px] w-[200px] flex justify-center items-center flex-col font-semibold text-2xl">
                     <p>文案</p>
                     <p>策划</p>
                 </div>
-                <ul class="menu menu-compact mt-10">
+                <ul class="menu menu-compact mt-[32px] font-puhui">
                     <li>诉求分析/评估</li>
                     <li>品牌文化梳理</li>
                     <li>品牌调性界定</li>
@@ -328,8 +223,8 @@
                     <li>系统性文案撰写</li>
                 </ul>
             </div>
-            <div class="flex justify-center items-center">
-                {% include "home/right_arrow.html" %}
+            <div class="flex justify-center items-center w-[120px] h-[200px]">
+                {% include "home/right_arrow_1.html" %}
             </div>
             <div>
                 <div
@@ -337,7 +232,7 @@
                     <p>视觉</p>
                     <p>创意</p>
                 </div>
-                <ul class="menu menu-compact mt-10">
+                <ul class="menu menu-compact mt-[32px] font-puhui">
                     <li>LOGO元素分解与提炼</li>
                     <li>主视觉元素创意</li>
                     <li>辅助元素设计</li>
@@ -346,8 +241,8 @@
                     <li>主视觉延展性应用</li>
                 </ul>
             </div>
-            <div class="flex justify-center items-center">
-                {% include "home/right_arrow.html" %}
+            <div class="flex justify-center items-center w-[120px] h-[200px]">
+                {% include "home/right_arrow_1.html" %}
             </div>
             <div>
                 <div
@@ -355,7 +250,7 @@
                     <p>画册</p>
                     <p>设计</p>
                 </div>
-                <ul class="menu menu-compact mt-10">
+                <ul class="menu menu-compact mt-[32px] font-puhui">
                     <li>主视觉与四封创作与设计</li>
                     <li>章节页面规划与统一</li>
                     <li>历史大事记设计</li>
@@ -364,8 +259,8 @@
                     <li>装帧形式设计</li>
                 </ul>
             </div>
-            <div class="flex justify-center items-center">
-                {% include "home/right_arrow.html" %}
+            <div class="flex justify-center items-center w-[120px] h-[200px]">
+                {% include "home/right_arrow_1.html" %}
             </div>
             <div>
                 <div
@@ -373,7 +268,7 @@
                     <p>会议</p>
                     <p>主视觉</p>
                 </div>
-                <ul class="menu menu-compact mt-10">
+                <ul class="menu menu-compact mt-[32px] font-puhui">
                     <li>会议活动策划</li>
                     <li>会议主视觉创意与设计</li>
                     <li>会议背景板设计</li>
@@ -384,8 +279,8 @@
                     <li>会场搭建布置</li>
                 </ul>
             </div>
-            <div class="flex justify-center items-center">
-                {% include "home/right_arrow.html" %}
+            <div class="flex justify-center items-center w-[120px] h-[200px]">
+                {% include "home/right_arrow_1.html" %}
             </div>
             <div>
                 <div
@@ -393,7 +288,7 @@
                     <p>印刷</p>
                     <p>制作</p>
                 </div>
-                <ul class="menu menu-compact mt-10">
+                <ul class="menu menu-compact mt-[32px] font-puhui">
                     <li>自有印刷厂及设备</li>
                     <li>纪念册/宣传册印刷制作</li>
                     <li>会议物料制作</li>
@@ -409,49 +304,51 @@
 
 </section>
 
-<section class="hidden sm:block">
-    <div class="mx-auto h-80 flex flex-col justify-center items-center text-center lg:w-[1700px]">
-        <p class="text-3xl font-bold mb-8 text-my-blue">金鹰品牌--核心优势</p>
-        <p class="text-lg">以策略为核心，以创新为本，专业化制作，降本增效，增强企业竞争实力</p>
+<section class="">
+    <div class="mx-auto text-center lg:w-[1700px] my-[140px]">
+        <p class="text-[4.99rem] font-pubui font-bold text-my-blue">金鹰品牌--核心优势</p>
+        <p class="text-[2.499rem] font-pubui">
+            以策略为核心，以创新为本，专业化制作，降本增效，增强企业竞争实力
+        </p>
     </div>
-    <div class=" mx-auto flex flex-row gap-12 place-items-start justify-center lg:w-[1700px]">
-        <div class="w-1/3 grid place-items-center">
+    <div class="mx-auto flex justify-center  place-items-start flex-wrap lg:w-[1560px]">
+        <div class="w-[360px] place-items-center">
             <div
-                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-puhui text-[3.33rem] text-my-blue">
                 <p>定策略</p>
                 <p>讲故事</p>
             </div>
-            <div class="text-center leading-relaxed mt-11">
+            <div class="text-center leading-relaxed mt-[50px]">
                 <p>SWOT分析及定位策略研究，提炼品牌价值与内核，制定合理有效营销策略，挖掘品牌故事，形成系统诉求文案，提升品牌影响力度；</p>
             </div>
         </div>
 
-        <div class="flex justify-center items-center">
-            {% include "home/right_arrow.html" %}
+        <div class="flex justify-center items-center w-[240px] h-[170px]">
+            {% include "home/right_arrow_1.html" %}
         </div>
 
-        <div class="w-1/3 grid place-items-center">
+        <div class="w-[360px] place-items-center">
             <div
-                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-my-blue">
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-puhui text-[3.33rem] text-my-blue">
                 <p>抓创意</p>
                 <p>抓设计</p>
             </div>
-            <div class="text-center leading-relaxed mt-11">
+            <div class="text-center leading-relaxed mt-[50px]">
                 <p>研究品牌定位策略，创作个性化视觉符号，建立统一可持续发展的品牌形象。拥有专业的品牌设计全体系服务能力。</p>
             </div>
         </div>
 
-        <div class="flex justify-center items-center">
-            {% include "home/right_arrow.html" %}
+        <div class="flex justify-center items-center w-[240px] h-[170px]">
+            {% include "home/right_arrow_1.html" %}
         </div>
 
-        <div class="w-1/3 grid place-items-center">
+        <div class="w-[360px] place-items-center">
             <div
-                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-bold text-2xl text-[#08117e]8">
+                class="border hover:bg-my-gold h-[170px] w-[360px] flex justify-center items-center flex-col font-puhui text-[3.33rem] text-my-blue">
                 <p>能印刷</p>
                 <p>强执行</p>
             </div>
-            <div class="text-center leading-relaxed mt-11">
+            <div class="text-center leading-relaxed mt-[50px]">
                 <p>有效落地是一个成为品牌的企业必备的前提。自有印刷厂及设备、同时拥有会议专用IED大屏、摄影等设备、专业会场布置能力。</p>
             </div>
         </div>
@@ -459,7 +356,7 @@
 </section>
 
 <section class="">
-    <div class="mx-auto mt-16 flex justify-center items-center lg:w-[1700px] h-[582px]">
+    <div class="mx-auto mt-[80px] flex justify-center items-center lg:w-[1700px] h-[582px]">
         {% image team_image original as img %}
         <img src="{{ img.url }}" class="w-full h-full">
     </div>
@@ -474,8 +371,8 @@
         <div class="w-[840px]">
             <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full  h-[290px]">
             <div class="mt-7">
-                <p class="text-lg">{{ new.title }}</p>
-                <div class="mt-6">
+                <p class="text-[1.49rem] font-puhui font-bold">{{ new.title }}</p>
+                <div class="mt-6 text-[1.16] font-puhui">
                     {{ new.body | richtext }}
                 </div>
             </div>
@@ -485,7 +382,7 @@
 
     <div class=" mx-auto grid grid-cols-1 md:grid-cols-3 mt-16 lg:w-[1700px]">
         {% for new in news_all %}
-        <div class="">
+        <div class="text-[1.16] font-puhui">
             <p><a href="{% pageurl new %}">{{ new.title}}</a></p>
         </div>
         {% endfor %}
@@ -493,12 +390,16 @@
 
 </section>
 
-<section class="bg-my-gold mt-11 hidden sm:block h-[200px]">
-    <div class=" mx-auto text-center  lg:w-[1700px]">
-        <p class="pt-16 text-3xl font-bold text-my-blue"><span class="px-5">品牌形象的-创作者</span><span
-                class="px-5">客户价值的-构建者</span></p>
-        <p class="mt-4 text-xl text-[#c18a78]"><span class="px-2">文字恋</span> <span class="px-2">色彩欲</span> <span
-                class="px-2">追求独特</span>
+<section class="bg-my-gold mt-11">
+    <div class="mx-auto text-center lg:w-[1700px]">
+        <p class="pt-14 text-[3.33rem] font-puhui font-bold text-my-blue">
+            <span class="px-5">品牌形象的-创作者</span>
+            <span class="px-5">客户价值的-构建者</span>
+        </p>
+        <p class="mt-4 text-[1.99rem] text-[#c18a78] font-puhui font-light">
+            <span class="px-2">文字恋</span>
+            <span class="px-2">色彩欲</span>
+            <span class="px-2">追求独特</span>
             <span>向往品质</span>
         </p>
     </div>
