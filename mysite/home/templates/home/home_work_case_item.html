@@ -5,11 +5,11 @@
     {% for image in item.images.all %}
     {% if image.is_home %}
     {% image image.image original as img %}
-    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+    <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
     {% endif %}
     {% endfor %}
     <div
-        class="absolute inset-0 flex items-end justify-start bg-my-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        class="absolute inset-0 flex items-end justify-start bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black">
         <div class="text-white text-left pl-[60px] pb-[50px] w-full">
             <p class="text-[1.49rem] font-puhui font-bold">{{ item.title }}</p>
             <p class="text-[1.16rem] font-puhui font-medium mt-[25px]">

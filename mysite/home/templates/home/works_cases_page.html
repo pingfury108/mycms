@@ -54,7 +54,7 @@
                 <a href="{% pageurl child_page %}" class="">
                     <div class="h-[360px] w-[560px]">
                         {% image child_page.images.first.image original as img %}
-                        <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                        <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
                     </div>
                     <div class="flex justify-start">
                         <div class="text-left">

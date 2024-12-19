@@ -28,7 +28,7 @@
 
 <section class="">
     <div class="mx-auto lg:w-[1700px] mt-28">
-        <img src="{% static 'images/about_row_3d.png' %}" alt="3D文字效果" class="w-full">
+        <img src="{% static 'images/about_row_3d.png' %}" alt="3D文字效果" class="w-full rounded">
     </div>
 </section>
 
@@ -46,7 +46,7 @@
 <section class="">
     <div class="mx-auto flex flex-wrap gap-2 lg:w-[1700px] mt-28">
         <div class="card card-compact w-[530px] h-[430px] rounded-none relative">
-            <img src="{% static 'images/about_row_1_0.png' %}" alt="Shoes" class="w-full h-[247px]" />
+            <img src="{% static 'images/about_row_1_0.png' %}" alt="Shoes" class="w-full h-[247px] rounded" />
             <div
                 class="card-body bg-my-gold w-full h-[183px] hover:h-[230px] hover:text-my-blue transition-height duration-300 absolute bottom-0 left-0">
                 <p class="card-title mt-4 text-2xl">品牌策略制定</p>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="card card-compact w-[530px] h-[430px] rounded-none relative">
-            <img src="{% static 'images/about_row_1_1.png' %}" alt="Shoes" class="w-full h-[247px]" />
+            <img src="{% static 'images/about_row_1_1.png' %}" alt="Shoes" class="w-full h-[247px] rounded" />
             <div
                 class="card-body bg-my-gold w-full h-[183px] hover:h-[230px] hover:text-my-blue transition-height duration-300 absolute bottom-0 left-0">
                 <p class="card-title mt-4 text-2xl">品牌价值激活</p>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="card card-compact w-[530px] h-[430px] rounded-none relative">
-            <img src="{% static 'images/about_row_1_2.png' %}" alt="Shoes" class="w-full h-[247px]" />
+            <img src="{% static 'images/about_row_1_2.png' %}" alt="Shoes" class="w-full h-[247px] rounded" />
             <div
                 class="card-body bg-my-gold  w-full h-[183px] hover:h-[230px] hover:text-my-blue transition-height duration-300 absolute bottom-0 left-0">
                 <p class="card-title mt-4 text-2xl">创新视觉体验</p>
@@ -194,7 +194,7 @@
 <section class="">
     <div class="mx-auto h-[565px] flex justify-center items-center lg:w-[1700px] mt-28">
         {% image page.team_image original as img %}
-        <img src="{{ img.url }}" class="w-full h-full">
+        <img src="{{ img.url }}" class="w-full h-full rounded">
     </div>
 </section>
 
@@ -229,7 +229,7 @@
             {% for logo in logos %}
             <div class="w-[215px] h-[93px]">
                 {% image logo.image original as img %}
-                <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+                <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
             </div>
             {% endfor %}
         </div>

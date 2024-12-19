@@ -379,7 +379,7 @@
 <section class="">
     <div class="mx-auto mt-[80px] flex justify-center items-center lg:w-[1700px] h-[582px]">
         {% image team_image original as img %}
-        <img src="{{ img.url }}" class="w-full h-full">
+        <img src="{{ img.url }}" class="w-full h-full rounded">
     </div>
 </section>
 
@@ -390,7 +390,7 @@
         {% for new in news %}
         {% image new.image original as img %}
         <div class="w-[840px]">
-            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full h-[290px]">
+            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full h-[290px] rounded">
             <div class="mt-7">
                 <p class="text-[1.49rem] font-puhui font-bold">{{ new.title }}</p>
                 <div class="mt-6 text-[1.16] font-puhui">
