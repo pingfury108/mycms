@@ -4,7 +4,7 @@
     <div class="mx-auto lg:w-[1700px] px-4 text-white lg:hidden block">
         <div class="grid grid-cols-2">
             <div class="col-span-2">
-                {% image contact_us_page.qrcode_image fill-200x200 as img %}
+                {% image contact_us_page.qrcode_image fill-100x100 as img %}
                 <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full">
             </div>
             <div class="">
@@ -23,12 +23,12 @@
         <div class="grid grid-cols-2">
             <div>
                 <p class="text-2xl font-bold mb-2">JINACD BRAND</p>
-                <div class="grid grid-cols-5">
-                    <div class="h-64 col-span-2">
-                        {% image contact_us_page.qrcode_image fill-300x300 as img %}
+                <div class="flex flex-row">
+                    <div class="h-[100px] w-[100px]">
+                        {% image contact_us_page.qrcode_image fill-100x100 as img %}
                         <img src=" {{ img.url }}" alt="{{ img.alt }}" class="h-full">
                     </div>
-                    <div class="col-span-3">
+                    <div class="ml-4">
                         <p class="mb-2">咨询电话 (TEL)</p>
                         <p class="mb-2">{{ contact_us_page.tel }}</p>
                         <p class="mb-2">{{ contact_us_page.mobile }}</p>

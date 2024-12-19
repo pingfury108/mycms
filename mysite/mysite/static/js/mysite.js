@@ -41,3 +41,16 @@ const elements = document.querySelectorAll('.carousel');
 elements.forEach(element => {
   createCarousel(element);
 });
+
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  dropdown.addEventListener('mouseenter', () => {
+    const content = dropdown.querySelector('.dropdown-content');
+    content.classList.remove('translate-y-full', 'opacity-0');
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    const content = dropdown.querySelector('.dropdown-content');
+    content.classList.add('translate-y-full', 'opacity-0');
+  });
+});

@@ -10,7 +10,7 @@
 
 <section class="bg-[#fdbb01]">
     <div class="hidden lg:block">
-        <div class="lg:w-[1800px] h-[748px] mx-auto grid grid-cols-12">
+        <div class="lg:w-[1800px] h-[744px] mx-auto grid grid-cols-12">
             <div class="h-full flex items-center left-arrow">
                 <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
                     <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,22 +46,41 @@
     </div>
     {% include "home/home_carousel_sm.html" %}
 
-    <div class="w-[1700px] mx-auto hidden md:grid grid-cols-4 h-[156px] items-end ">
-        <div class="text-white text-[1.9rem] font-puhui font-bold bg-[#fdbb01] flex flex-row justify-end p-6">
-            <div class="place-self-end">
-                <p class="text-[0.99rem]">服务内容</p>
-                <p class="text-[1.16rem]">OUR SERVICES</p>
+    <div class="mx-auto hidden md:grid grid-cols-5 h-[156px] items-end ">
+        <div class="col-start-2">
+            <div class="text-white text-[1.9rem] font-puhui font-bold bg-[#fdbb01] flex flex-row p-2">
+                <div class="place-self-end">
+                    <p class="text-[0.99rem]">服务内容</p>
+                    <p class="text-[1.16rem]">OUR SERVICES</p>
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
             </div>
-            <div class="flex items-center">
-                <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+            <div class="dropdown dropdown-hover dropdown-top flex bg-my-blue">
+                <div tabindex="0" role="" class="bg-my-blue h-[15px]">
+                </div>
+                <div tabindex="0" class="bg-my-blue text-my-gold px-7  py-5  h-[135px] w-full dropdown-content
+                               transform translate-y-full opacity-0 transition-all duration-300"">
+                    <p class=" font-puhui font-bold text-[1.74rem] mb-2.5">周年纪念册设计</p>
+                    <p class="font-puhui font-regular text-[0.99rem]">周年庆纪念册</p>
+                    <p class="font-puhui text-[0.99rem]">人物纪念册</p>
+                    <p class="font-puhui text-[0.99rem]">项目竣工/历程纪念册</p>
+                    <div class="absolute bottom-2 right-2 flex items-center">
+                        <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="dropdown dropdown-hover dropdown-top">
             <div tabindex="0" role="" class="bg-my-gold h-[15px]"></div>
-            <div tabindex="0" class="bg-my-gold text-my-blue px-7  py-5  h-[135px] w-full dropdown-content">
-                <p class="font-puhui font-bold text-[1.74rem] mb-2.5">周年纪念册设计</p>
+            <div tabindex="0" class="bg-my-gold text-my-blue px-7  py-5  h-[135px] w-full dropdown-content
+                           transform translate-y-full opacity-0 transition-all duration-300"">
+                <p class=" font-puhui font-bold text-[1.74rem] mb-2.5">周年纪念册设计</p>
                 <p class="font-puhui font-regular text-[0.99rem]">周年庆纪念册</p>
                 <p class="font-puhui text-[0.99rem]">人物纪念册</p>
                 <p class="font-puhui text-[0.99rem]">项目竣工/历程纪念册</p>
@@ -73,12 +92,13 @@
             </div>
         </div>
         <div class="dropdown dropdown-hover dropdown-top">
-            <div tabindex="0" role="" class="bg-my-blue h-[20px]"></div>
-            <div tabindex="0" class="bg-my-blue text-my-gold px-6 py-1  h-[135px] w-full dropdown-content">
-                <p class="font-puhui font-medium text-[2.4rem]">会议活动策划设计</p>
-                <p class="font-puhui text-[1.1rem]">周年会议主视觉创意设计</p>
-                <p class="font-puhui text-[1.1rem]">论坛\会议活动策划布置</p>
-                <p class="font-puhui text-[1.1rem]">年会\活动\会议手册</p>
+            <div tabindex="0" role="" class="bg-my-blue h-[15px]"></div>
+            <div tabindex="0" class="bg-my-blue text-my-gold px-7 py-5  h-[135px] w-full dropdown-content
+                           transform translate-y-full opacity-0 transition-all duration-300"">
+                <p class=" font-puhui font-bold text-[1.74rem] mb-2.5">会议活动策划设计</p>
+                <p class="font-puhui text-[0.99rem]">周年会议主视觉创意设计</p>
+                <p class="font-puhui text-[0.99rem]">论坛\会议活动策划布置</p>
+                <p class="font-puhui text-[0.99rem]">年会\活动\会议手册</p>
                 <div class="absolute bottom-2 right-2 flex items-center">
                     <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
@@ -87,12 +107,13 @@
             </div>
         </div>
         <div class="dropdown dropdown-hover dropdown-top">
-            <div tabindex="0" role="" class="bg-my-gold h-[20px]"></div>
-            <div tabindex="0" class="bg-my-gold text-my-blue px-6 py-1  h-[135px] w-full dropdown-content">
-                <p class="font-puhui font-medium text-[2.4rem]">企业宣传册设计</p>
-                <p class="font-puhui text-[1.1rem]">集团\企业形象画册</p>
-                <p class="font-puhui text-[1.1rem]">企业文化宣传手册</p>
-                <p class="font-puhui text-[1.1rem]">产品宣传画册</p>
+            <div tabindex="0" role="" class="bg-my-gold h-[15px]"></div>
+            <div tabindex="0" class="bg-my-gold text-my-blue px-7 py-5  h-[135px] w-full dropdown-content
+                           transform translate-y-full opacity-0 transition-all duration-300"">
+                <p class=" font-puhui font-bold text-[1.74rem] mb-2.5">企业宣传册设计</p>
+                <p class="font-puhui text-[0.99rem]">集团\企业形象画册</p>
+                <p class="font-puhui text-[0.99rem]">企业文化宣传手册</p>
+                <p class="font-puhui text-[0.99rem]">产品宣传画册</p>
                 <div class="absolute bottom-2 right-2 flex items-center">
                     <svg class="w-24 h-3" viewBox="0 0 96 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 6H90M90 6L86 2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
@@ -128,7 +149,7 @@
                 金鹰策略先后为：清华大学、民航局、王府井，万科、国投、港湾航空等提供品牌战略及多元宣传册等视觉设计服务.</span>
         </p>
     </div>
-    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[6px]">
+    <div class="lg:w-[1700px] mx-auto grid gap-[6px]">
         <div class="flex w-full gap-[6px] lg:h-[669px]">
             {% with item=case_item_main %}
             {% if item %}
@@ -150,7 +171,7 @@
 
             {% with case_item_row1_right as item %}
             {% if item %}
-            <div class="relative overflow-hidden group w-[500px]">
+            <div class="relative overflow-hidden group w-[504px]">
                 {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
@@ -160,7 +181,7 @@
         <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
             {% with case_item_row2_left as item %}
             {% if item %}
-            <div class="relative overflow-hidden group col-span-1 h-full w-[500px]">
+            <div class="relative overflow-hidden group col-span-1 h-full w-[504px]">
                 {% include 'home/home_work_case_item.html' %}
             </div>
             {% endif %}
