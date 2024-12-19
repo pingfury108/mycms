@@ -203,8 +203,8 @@
 </section>
 
 
-<section class="">
-    <div class="lg:w-[1700px] mx-auto mt-[140px] mb-[92px]">
+<section class="bg-[#f2f2f3]">
+    <div class="lg:w-[1700px] mx-auto pt-[140px] pb-[92px]">
         <div class="lg:w-[1560px] flex justify-center  place-items-start flex-wrap">
             <div class="">
                 <div
@@ -365,11 +365,11 @@
 {% include "home/home_connect.html"%}
 
 <section class="">
-    <div class="mx-auto flex flex-row gap-2.5 lg:w-[1700px] mt-9">
+    <div class="mx-auto grid lg:grid-cols-2 gap-2.5 lg:w-[1700px] mt-9">
         {% for new in news %}
         {% image new.image original as img %}
         <div class="w-[840px]">
-            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full  h-[290px]">
+            <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full h-[290px]">
             <div class="mt-7">
                 <p class="text-[1.49rem] font-puhui font-bold">{{ new.title }}</p>
                 <div class="mt-6 text-[1.16] font-puhui">

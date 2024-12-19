@@ -3082,6 +3082,11 @@ input.tab:checked + .tab-content,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#f2f2f3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 243 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -3178,6 +3183,14 @@ input.tab:checked + .tab-content,
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pb-\[92px\] {
+  padding-bottom: 92px;
+}
+
+.pt-\[140px\] {
+  padding-top: 140px;
 }
 
 .text-left {
@@ -3323,6 +3336,10 @@ input.tab:checked + .tab-content,
 
 .text-\[2\.91rem\] {
   font-size: 2.91rem;
+}
+
+.text-\[2\.49rem\] {
+  font-size: 2.49rem;
 }
 
 .font-bold {
