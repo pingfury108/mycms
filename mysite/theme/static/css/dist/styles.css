@@ -2323,6 +2323,10 @@ input.tab:checked + .tab-content,
   margin: 0.25rem;
 }
 
+.m-28 {
+  margin: 7rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2356,6 +2360,11 @@ input.tab:checked + .tab-content,
 .my-\[30px\] {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.my-28 {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
 .mb-12 {
@@ -2722,6 +2731,30 @@ input.tab:checked + .tab-content,
   height: 150px;
 }
 
+.h-dvh {
+  height: 100dvh;
+}
+
+.h-\[750px\] {
+  height: 750px;
+}
+
+.h-\[745px\] {
+  height: 745px;
+}
+
+.h-\[748px\] {
+  height: 748px;
+}
+
+.h-\[10px\] {
+  height: 10px;
+}
+
+.h-\[15px\] {
+  height: 15px;
+}
+
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -2836,6 +2869,30 @@ input.tab:checked + .tab-content,
 
 .w-full {
   width: 100%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .flex-1 {
@@ -2966,6 +3023,10 @@ input.tab:checked + .tab-content,
   gap: 6px;
 }
 
+.gap-\[10px\] {
+  gap: 10px;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -3012,6 +3073,10 @@ input.tab:checked + .tab-content,
 
 .border-0 {
   border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-t {
@@ -3165,6 +3230,11 @@ input.tab:checked + .tab-content,
   padding-bottom: 2rem;
 }
 
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .pb-\[50px\] {
   padding-bottom: 50px;
 }
@@ -3191,6 +3261,38 @@ input.tab:checked + .tab-content,
 
 .pt-\[140px\] {
   padding-top: 140px;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pb-7 {
+  padding-bottom: 1.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -3342,6 +3444,23 @@ input.tab:checked + .tab-content,
   font-size: 2.49rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[1\.24rem\] {
+  font-size: 1.24rem;
+}
+
+.text-\[2\.33rem\] {
+  font-size: 2.33rem;
+}
+
+.text-\[1\.16px\] {
+  font-size: 1.16px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3434,6 +3553,11 @@ input.tab:checked + .tab-content,
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#e6beb4\] {
+  --tw-text-opacity: 1;
+  color: rgb(230 190 180 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0 {
