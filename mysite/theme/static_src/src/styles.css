@@ -29,3 +29,10 @@
   font-weight: light;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Number';
+  src: url('/static/fonts/tt0248m.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}

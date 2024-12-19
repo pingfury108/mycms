@@ -22,15 +22,20 @@ function createCarousel(carousel) {
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.right-arrow');
 
-  leftArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-    scrollToIndex(currentIndex);
-  });
+  if (leftArrow) {
+    leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      scrollToIndex(currentIndex);
+    });
+  }
 
-  rightArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    scrollToIndex(currentIndex);
-  });
+  if (rightArrow) {
+
+    rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      scrollToIndex(currentIndex);
+    });
+  }
 
   //carouselContainer.addEventListener('mouseover', () => clearInterval(autoScroll));
   //carouselContainer.addEventListener('mouseout', () => setInterval(autoScroll, 3000));
@@ -53,4 +58,28 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
     const content = dropdown.querySelector('.dropdown-content');
     content.classList.add('translate-y-full', 'opacity-0');
   });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const displayElement = document.querySelectorAll('.font-number');
+
+  if (displayElement) {
+    displayElement.forEach(element => {
+
+      const targetNumber = Number(element.textContent.replace("+", ""));
+      let currentNumber = 0;
+
+      const interval = setInterval(() => {
+        if (currentNumber < targetNumber) {
+          currentNumber++;
+          element.textContent = currentNumber + '+';
+        } else {
+          clearInterval(interval);
+        }
+      }, 10);
+
+    });
+  }
 });

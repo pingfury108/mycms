@@ -50,7 +50,8 @@ module.exports = {
         "black": '#1A1A1A',
       },
       fontFamily: {
-        'puhui': ['Alibaba PuHui']
+        'puhui': ['Alibaba PuHui'],
+        'number': ['Number']
       }
     },
   },
