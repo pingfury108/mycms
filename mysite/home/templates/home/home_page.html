@@ -10,7 +10,7 @@
 
 <section class="bg-[#fdbb01]">
     <div class="hidden lg:block">
-        <div class="lg:w-[1800px] h-[664px] mx-auto grid grid-cols-12">
+        <div class="lg:w-[1800px] h-[700px] mx-auto grid grid-cols-12">
             <div class="h-full flex items-center left-arrow">
                 <div class="btn-circle opacity-50 hover:opacity-100 transition-opacity duration-300">
                     <svg class="w-40 h-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,31 +105,31 @@
 </section>
 
 <section class="">
-    <div class="lg:w-[1700px] mx-auto mt-[190px] text-center">
-        <p class="text-[4.9rem] text-my-blue font-puhui">金鹰品牌创 × 品牌策略 × 视觉设计 = 谋大品牌</p>
-        <p class="text-[2.4rem] font-puhui  mt-8">文案写作 + 画册设计 + 周年纪念册 + 会议活动 + 印刷制作</p>
-        <div class="mx-auto mt-[110px]">
-            <p class="text-[1.49rem] font-puhui">以策略思维为先导，注重品牌长效发展，深度挖掘品牌核心价值，</p>
-            <p class="text-[1.49rem] font-puhui">以品牌塑造灵魂，用美学创造价值，创作差异化视觉符号，持续创造品牌溢价空间；</p>
-            <p class="text-[1.49rem] font-puhui">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务</p>
+    <div class="lg:w-[1700px] mx-auto mt-[170px] text-center">
+        <p class="text-[4.16rem] text-my-blue font-puhui font-bold">金鹰品创 × 品牌策略 × 视觉设计 = 谋大品牌</p>
+        <p class="text-[2.4rem] font-puhut mt-2.5">文案写作 + 画册设计 + 周年纪念册 + 会议活动 + 印刷制作</p>
+        <div class="mx-auto mt-[80px]">
+            <p class="text-[1.33rem] font-puhui mb-2">以策略思维为先导，注重品牌长效发展，深度挖掘品牌核心价值，</p>
+            <p class="text-[1.33rem] font-puhui mb-2">以品牌塑造灵魂，用美学创造价值，创作差异化视觉符号，持续创造品牌溢价空间；</p>
+            <p class="text-[1.33rem] font-puhui">公司汇聚品牌策划、文案写作、视觉设计等多领域专业人才，从策略分析到视觉设计,再到印刷制作,为客户提供视觉设计全流程服务</p>
         </div>
     </div>
 </section>
 
 {% include "home/home_card_0.html"%}
 
-<hr class="mt-[110px]" />
+<hr class="mt-[80px]" />
 
 <section class="">
     <div class="lg:w-[1700px] mx-auto">
         <p class="mt-[30px] flex justify-between items-center">
-            <span class="text-my-blue text-[1.499rem] font-puhui font-medium">金属品牌创意-国内领先的宣传策划与视觉设计公司</span>
-            <span class="text-[0.99rem] font-puhui font-medium justify-self-end">
+            <span class="text-my-blue text-[1.33rem] font-puhui font-medium">金鹰品牌创意-国内领先的宣传策划与视觉设计公司</span>
+            <span class="text-[0.74rem] font-puhui font-medium justify-self-end">
                 金鹰策略先后为：清华大学、民航局、王府井，万科、国投、港湾航空等提供品牌战略及多元宣传册等视觉设计服务.</span>
         </p>
     </div>
-    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[8px]">
-        <div class="flex w-full gap-[8px] lg:h-[669px]">
+    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[6px]">
+        <div class="flex w-full gap-[6px] lg:h-[669px]">
             {% with item=case_item_main %}
             {% if item %}
             <div class="relative overflow-hidden group w-full">
@@ -138,7 +138,7 @@
             {% endif %}
             {% endwith %}
         </div>
-        <div class="flex flex-row gap-[8px] w-full lg:h-[669px]">
+        <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
             {% with item=case_item_row1_left %}
             {% if item %}
             <div class="relative overflow-hidden group w-[1190px]">
@@ -157,7 +157,7 @@
             {% endwith %}
 
         </div>
-        <div class="flex flex-row gap-[8px] w-full lg:h-[669px]">
+        <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
             {% with case_item_row2_left as item %}
             {% if item %}
             <div class="relative overflow-hidden group col-span-1 h-full w-[500px]">
@@ -175,7 +175,7 @@
             {% endwith %}
         </div>
 
-        <div class="grid grid-cols-2 gap-[8px] w-full lg:h-[669px]">
+        <div class="grid grid-cols-2 gap-[6px] w-full lg:h-[669px]">
             {% for item in case_items %}
             <div class="relative overflow-hidden group col-span-1 ">
                 {% include 'home/home_work_case_item.html' %}
@@ -197,8 +197,8 @@
 
 <section class="bg-my-gold flex justify-center items-center  h-[300px]">
     <div class="mx-auto text-center text-my-blue lg:w-[1700px]">
-        <p class="mb-4 font-puhui font-bold text-[3.33rem]">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
-        <p class="font-puhui text-[2.499rem]">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
+        <p class="mb-4 font-puhui font-bold text-[2.91rem]">高端画册设计咨询: 1368 355 5200 / 010-62924170</p>
+        <p class="font-puhui text-[2.08rem]">专注品牌文化价值值创造, 赋能客户牌溢价空间</p>
     </div>
 </section>
 
