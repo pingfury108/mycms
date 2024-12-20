@@ -14,10 +14,6 @@ def get_pages(context):
     context["news_page"] = NewsPage.objects.first()
     context["about_page"] = AboutPage.objects.first()
     context["contact_us_page"] = ContactUsPage.objects.first()
-    context["industry_cases_page"] = Page.objects.filter(title="行业案例").first()
-    context["copywriter_page"] = Page.objects.filter(title="文案策划").first()
-    context["brand_design_page"] = Page.objects.filter(title="品牌设计").first()
-    context["meeting_planning_page"] = Page.objects.filter(title="会议策划").first()
 
     context["case_items"] = CaseItemPage.objects.filter(
         is_home_item=False,
@@ -279,48 +275,4 @@ class ContactUsPage(MyPage):
         FieldPanel("tel"),
         FieldPanel("mobile"),
         FieldPanel("email"),
-    ]
-
-
-class IndustryCasesPage(MyPage):
-    class Meta:
-        verbose_name = "行业案例"
-
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
-    ]
-
-
-class CopywriterPage(MyPage):
-    class Meta:
-        verbose_name = "文案策划"
-
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
-    ]
-
-
-class BrandDesignPage(MyPage):
-    class Meta:
-        verbose_name = "品牌设计"
-
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
-    ]
-
-
-class MeetingPlanningPage(MyPage):
-    class Meta:
-        verbose_name = "会议策划"
-
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel("body"),
     ]
