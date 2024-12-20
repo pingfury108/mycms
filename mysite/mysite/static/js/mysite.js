@@ -31,37 +31,38 @@ function createCarousel(carousel) {
     scrollToIndex(currentIndex);
   });
 
-  // 鼠标悬停时暂停自动滚动
+
   $carousel.hover(
     () => clearInterval(autoScrollInterval),
-    () => setInterval(autoScroll, 3000)
+    //() => setInterval(autoScroll, 3000)
   );
+
 }
 
-// 初始化所有轮播图
-$('.carousel').each(function() {
+
+$('.carousel').each(function () {
   createCarousel(this);
 });
 
 
 $('.dropdown').on({
-  mouseenter: function() {
+  mouseenter: function () {
     $(this).find('.dropdown-content')
-           .removeClass('translate-y-full opacity-0');
+      .removeClass('translate-y-full opacity-0');
   },
-  mouseleave: function() {
+  mouseleave: function () {
     $(this).find('.dropdown-content')
-           .addClass('translate-y-full opacity-0');
+      .addClass('translate-y-full opacity-0');
   }
 });
 
 
-$(document).ready(function() {
-  $('.font-number').each(function() {
+$(document).ready(function () {
+  $('.font-number').each(function () {
     const $element = $(this);
     const targetNumber = Number($element.text().replace("+", ""));
     let currentNumber = 0;
-    
+
     const interval = setInterval(() => {
       if (currentNumber < targetNumber) {
         currentNumber++;
