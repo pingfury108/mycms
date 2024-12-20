@@ -92,8 +92,8 @@ class HomeTitle(MyPage):
     text_row2 = models.CharField(max_length=250, blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("text_row1"),
-        FieldPanel("text_row2"),
+        FieldPanel("text_row1", heading="第一行文字"),
+        FieldPanel("text_row2", heading="第二行文字"),
     ]
 
 
@@ -132,10 +132,10 @@ class PageGalleryImage(ClusterableModel):
     is_home = models.BooleanField(default=False)
 
     panels = [
-        FieldPanel("image"),
-        FieldPanel("caption"),
-        FieldPanel("describe"),
-        FieldPanel("is_home"),
+        FieldPanel("image", heading="案例图片"),
+        FieldPanel("caption", heading="案例图片标题"),
+        FieldPanel("describe", heading="案例图片描述"),
+        FieldPanel("is_home", heading="图片是否为首页展示图片"),
     ]
 
 
@@ -152,14 +152,16 @@ class CaseItemPage(MyPage):
 
     body = RichTextField(blank=True)
     content_panels = Page.content_panels + [
-        FieldPanel("describe"),
-        FieldPanel("industry"),
-        FieldPanel("is_home_item"),
-        FieldPanel("is_home_item_row"),
-        FieldPanel("is_home_item_left"),
-        FieldPanel("is_home_item_right"),
-        FieldPanel("body"),
-        InlinePanel("images", label="Images"),
+        FieldPanel("describe", heading="服务内容"),
+        FieldPanel("industry", heading="所属行业"),
+        FieldPanel("is_home_item", heading="是否在首页展示"),
+        FieldPanel(
+            "is_home_item_row", heading="首页展示行数(1 为第一行, 仅当在首页展示时可用)"
+        ),
+        FieldPanel("is_home_item_left", heading="是否展示在首页行左边"),
+        FieldPanel("is_home_item_right", heading="是否展示在首页行右边"),
+        FieldPanel("body", heading="案例描述"),
+        InlinePanel("images", label="Images", heading="案例照片列表"),
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -204,7 +206,10 @@ class NewsItemPage(MyPage):
         related_name="+",
     )
     body = RichTextField(blank=True)
-    content_panels = Page.content_panels + [FieldPanel("body"), FieldPanel("image")]
+    content_panels = Page.content_panels + [
+        FieldPanel("body", heading="正文"),
+        FieldPanel("image", heading="图片"),
+    ]
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
@@ -237,8 +242,8 @@ class AboutPage(MyPage):
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
-        FieldPanel("team_image"),
-        FieldPanel("logo_image"),
+        FieldPanel("team_image", heading="团队照片"),
+        FieldPanel("logo_image", heading="客户LOGO墙照片"),
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -267,9 +272,9 @@ class ContactUsPage(MyPage):
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
-        FieldPanel("addr"),
-        FieldPanel("qrcode_image"),
-        FieldPanel("tel"),
-        FieldPanel("mobile"),
-        FieldPanel("email"),
+        FieldPanel("addr", heading="地址"),
+        FieldPanel("qrcode_image", heading="二维码"),
+        FieldPanel("tel", heading="电话号码"),
+        FieldPanel("mobile", heading="手机号码"),
+        FieldPanel("email", heading="电子邮箱"),
     ]
