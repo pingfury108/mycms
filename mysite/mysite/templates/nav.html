@@ -10,7 +10,11 @@
     <div class="flex-none hidden lg:block my-4">
         <ul class="menu menu-horizontal px-1">
             {% include "nav_li.html" %}
-            <li><a>电话: 010-6292-4170 / 1368355500</a></li>
+            <li>
+                <a>
+                    电话: {{ contact_us_page.tel }} / {{ contact_us_page.mobile }}
+                </a>
+            </li>
         </ul>
     </div>
     <div class="flex-none lg:hidden block px-1 my-4">
