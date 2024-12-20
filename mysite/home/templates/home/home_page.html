@@ -3,6 +3,12 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
+<style>
+    .case-item-text {
+        animation-delay: 0.350s;
+    }
+
+</style>
 
 {% endblock extra_css %}
 
@@ -149,56 +155,58 @@
                 金鹰策略先后为：清华大学、民航局、王府井，万科、国投、港湾航空等提供品牌战略及多元宣传册等视觉设计服务.</span>
         </p>
     </div>
-    <div class="lg:w-[1700px] mx-auto grid gap-[6px]">
-        <div class="flex w-full gap-[6px] lg:h-[669px]">
-            {% with item=case_item_main %}
-            {% if item %}
-            <div class="relative overflow-hidden group w-full">
-                {% include 'home/home_work_case_item.html' %}
+    <div class="lg:w-[1700px] mx-auto">
+        <div class="w-full grid gap-[6px] my-[3px]">
+            <div class="flex w-full gap-[6px] lg:h-[669px]">
+                {% with item=case_item_main %}
+                {% if item %}
+                <div class="case-item relative overflow-hidden group w-full">
+                    {% include 'home/home_work_case_item.html' %}
+                </div>
+                {% endif %}
+                {% endwith %}
             </div>
-            {% endif %}
-            {% endwith %}
+            <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
+                {% with item=case_item_row1_left %}
+                {% if item %}
+                <div class="case-item relative overflow-hidden group w-[1190px]">
+                    {% include 'home/home_work_case_item.html' %}
+                </div>
+                {% endif %}
+
+                {% endwith %}
+
+                {% with case_item_row1_right as item %}
+                {% if item %}
+                <div class="case-item relative overflow-hidden group w-[504px]">
+                    {% include 'home/home_work_case_item.html' %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+            </div>
+            <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
+                {% with case_item_row2_left as item %}
+                {% if item %}
+                <div class="case-item relative overflow-hidden group col-span-1 h-full w-[504px]">
+                    {% include 'home/home_work_case_item.html' %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                {% with case_item_row2_right as item %}
+                {% if item %}
+                <div class="case-item relative overflow-hidden group col-span-3 h-full w-[1190px]">
+                    {% include 'home/home_work_case_item.html' %}
+                </div>
+                {% endif %}
+                {% endwith %}
+            </div>
         </div>
-        <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
-            {% with item=case_item_row1_left %}
-            {% if item %}
-            <div class="relative overflow-hidden group w-[1190px]">
-                {% include 'home/home_work_case_item.html' %}
-            </div>
-            {% endif %}
 
-            {% endwith %}
-
-            {% with case_item_row1_right as item %}
-            {% if item %}
-            <div class="relative overflow-hidden group w-[504px]">
-                {% include 'home/home_work_case_item.html' %}
-            </div>
-            {% endif %}
-            {% endwith %}
-
-        </div>
-        <div class="flex flex-row gap-[6px] w-full lg:h-[669px]">
-            {% with case_item_row2_left as item %}
-            {% if item %}
-            <div class="relative overflow-hidden group col-span-1 h-full w-[504px]">
-                {% include 'home/home_work_case_item.html' %}
-            </div>
-            {% endif %}
-            {% endwith %}
-
-            {% with case_item_row2_right as item %}
-            {% if item %}
-            <div class="relative overflow-hidden group col-span-3 h-full w-[1190px]">
-                {% include 'home/home_work_case_item.html' %}
-            </div>
-            {% endif %}
-            {% endwith %}
-        </div>
-
-        <div class="grid grid-cols-2 gap-[6px] w-full lg:h-[669px]">
+        <div class="grid grid-cols-2 gap-[6px] w-full mt-[3px]">
             {% for item in case_items %}
-            <div class="relative overflow-hidden group col-span-1 ">
+            <div class="case-item relative overflow-hidden group col-span-1 lg:h-[669px]">
                 {% include 'home/home_work_case_item.html' %}
             </div>
             {% endfor %}
@@ -429,3 +437,21 @@
 </section>
 
 {% endblock content %}
+
+
+{% block extra_js %}
+<script type="text/javascript">
+    $('.case-item').on({
+        mouseenter: function () {
+            $(this).find('.case-item-body').addClass('animate__animated animate__slideInLeft animate__faster');
+            $(this).find('.case-item-text').addClass('animate__animated animate__slideInUp');
+        },
+        mouseleave: function () {
+            $(this).find('.case-item-body').removeClass('animate__animated animate__slideInLeft animate__faster');
+            $(this).find('.case-item-text').removeClass('animate__animated animate__slideInUp');
+
+        },
+    });
+
+</script>
+{% endblock %}

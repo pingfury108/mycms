@@ -27,6 +27,7 @@
 
     {# Global stylesheets #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
 
     {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
@@ -46,6 +47,8 @@
     {% include "footer.html" %}
 
     {# Global javascript #}
+    <script type="text/javascript" src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+
     <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
 
     {% block extra_js %}

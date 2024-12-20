@@ -1,85 +1,74 @@
 function createCarousel(carousel) {
-  const carouselContainer = carousel
-  const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
+  const $carousel = $(carousel);
+  const $items = $carousel.find('.carousel-item');
   let currentIndex = 0;
-  const itemWidth = carouselItems[0].offsetWidth;
+  const itemWidth = $items.first().width();
 
   function scrollToIndex(index) {
-    carouselContainer.scrollTo({
-      left: index * itemWidth,
-      behavior: 'smooth'
-    });
+    $carousel.animate({
+      scrollLeft: index * itemWidth
+    }, 'slow');
   }
 
   function autoScroll() {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
+    currentIndex = (currentIndex + 1) % $items.length;
     scrollToIndex(currentIndex);
   }
 
-  setInterval(autoScroll, 3000);
+  const autoScrollInterval = setInterval(autoScroll, 3000);
 
-  // 添加左右箭头控制
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
+  // 箭头控制
+  const $leftArrow = $('.left-arrow');
+  const $rightArrow = $('.right-arrow');
 
-  if (leftArrow) {
-    leftArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-      scrollToIndex(currentIndex);
-    });
-  }
+  $leftArrow.on('click', () => {
+    currentIndex = (currentIndex - 1 + $items.length) % $items.length;
+    scrollToIndex(currentIndex);
+  });
 
-  if (rightArrow) {
+  $rightArrow.on('click', () => {
+    currentIndex = (currentIndex + 1) % $items.length;
+    scrollToIndex(currentIndex);
+  });
 
-    rightArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % carouselItems.length;
-      scrollToIndex(currentIndex);
-    });
-  }
-
-  //carouselContainer.addEventListener('mouseover', () => clearInterval(autoScroll));
-  //carouselContainer.addEventListener('mouseout', () => setInterval(autoScroll, 3000));
+  // 鼠标悬停时暂停自动滚动
+  $carousel.hover(
+    () => clearInterval(autoScrollInterval),
+    () => setInterval(autoScroll, 3000)
+  );
 }
 
-const elements = document.querySelectorAll('.carousel');
-
-elements.forEach(element => {
-  createCarousel(element);
+// 初始化所有轮播图
+$('.carousel').each(function() {
+  createCarousel(this);
 });
 
 
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-  dropdown.addEventListener('mouseenter', () => {
-    const content = dropdown.querySelector('.dropdown-content');
-    content.classList.remove('translate-y-full', 'opacity-0');
-  });
-
-  dropdown.addEventListener('mouseleave', () => {
-    const content = dropdown.querySelector('.dropdown-content');
-    content.classList.add('translate-y-full', 'opacity-0');
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const displayElement = document.querySelectorAll('.font-number');
-
-  if (displayElement) {
-    displayElement.forEach(element => {
-
-      const targetNumber = Number(element.textContent.replace("+", ""));
-      let currentNumber = 0;
-
-      const interval = setInterval(() => {
-        if (currentNumber < targetNumber) {
-          currentNumber++;
-          element.textContent = currentNumber + '+';
-        } else {
-          clearInterval(interval);
-        }
-      }, 10);
-
-    });
+$('.dropdown').on({
+  mouseenter: function() {
+    $(this).find('.dropdown-content')
+           .removeClass('translate-y-full opacity-0');
+  },
+  mouseleave: function() {
+    $(this).find('.dropdown-content')
+           .addClass('translate-y-full opacity-0');
   }
+});
+
+
+$(document).ready(function() {
+  $('.font-number').each(function() {
+    const $element = $(this);
+    const targetNumber = Number($element.text().replace("+", ""));
+    let currentNumber = 0;
+    
+    const interval = setInterval(() => {
+      if (currentNumber < targetNumber) {
+        currentNumber++;
+        $element.text(currentNumber + '+');
+      } else {
+        clearInterval(interval);
+      }
+    }, 10);
+  });
 });
