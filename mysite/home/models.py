@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from wagtail.models import Page
 from wagtail.fields import RichTextField
@@ -109,6 +110,18 @@ class WorksCasesPage(MyPage):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["items"] = CaseItemPage.objects.all()
+        paginator = Paginator(context["items"], 15)
+        page_number = request.GET.get("page")
+
+        try:
+            pages = paginator.page(page_number)
+        except PageNotAnInteger:
+            pages = paginator.page(1)
+        except EmptyPage:
+            pages = paginator.page(paginator.num_pages)
+
+        context["pages"] = pages
+        context["paginator"] = paginator
 
         return context
 
@@ -168,6 +181,17 @@ class NewsPage(MyPage):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["news_all"] = NewsItemPage.objects.all()
+        paginator = Paginator(context["news_all"], 5)
+        page_number = request.GET.get("page")
+        try:
+            pages = paginator.page(page_number)
+        except PageNotAnInteger:
+            pages = paginator.page(1)
+        except EmptyPage:
+            pages = paginator.page(paginator.num_pages)
+
+        context["pages"] = pages
+        context["paginator"] = paginator
 
         return context
 

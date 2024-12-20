@@ -58,7 +58,7 @@
     <div class=" mx-auto px-4 lg:w-[1700px] flex mt-12 gap-24 mb-44">
         {% block item %}
         <div class="grid grid-cols-1 gap-10 w-[1166px]">
-            {%for child_page in news_all %}
+            {%for child_page in pages %}
             <div class="flex gap-8 h-[230px]">
                 <div class="w-[490px] h-full">
                     {% image child_page.image original as img %}
@@ -73,6 +73,31 @@
                 </div>
             </div>
             {% endfor %}
+            <div class="join flex justify-center mt-8">
+                <button class="join-item btn btn-xs">
+                    {% if pages.has_previous %}
+                    <a href="?page={{ pages.previous_page_number }}">«</a>
+                    {% else %}
+                    <sapn>«</sapn>
+                    {% endif %}
+                </button>
+                {% for num in pages.paginator.page_range %}
+                {% if num == pages.number %}
+                <button class="join-item btn btn-xs btn-active">{{ num }}</button>
+                {% else %}
+                <button class="join-item btn btn-xs">
+                    <a href="?page={{ num }}">{{ num }}</a>
+                </button>
+                {% endif %}
+                {% endfor %}
+                <button class="join-item btn btn-xs">
+                    {% if pages.has_next %}
+                    <a href="?page={{ pages.next_page_number }}">»</a>
+                    {% else %}
+                    <sapn>»</sapn>
+                    {% endif %}
+                </button>
+            </div>
         </div>
         <div class="w-[430px] bg-white p-8 rounded-lg lg:col-span-1 hidden sm:block">
             <p class="text-xl font-bold mb-4">热门推荐</p>
