@@ -61,7 +61,7 @@
             {%for child_page in pages %}
             <div class="flex gap-8 h-[230px]">
                 <div class="w-[490px] h-full">
-                    {% image child_page.image original as img %}
+                    {% image child_page.image height-230 as img %}
                     <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
                 </div>
                 <div class="">

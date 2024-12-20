@@ -37,11 +37,11 @@
 </section>
 
 <div class="mt-24">
-    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-2.5">
+    <div class="lg:w-[1700px] mx-auto grid grid-cols-1 gap-[6px]">
         {% for image in page.images.all %}
         {% image image.image original as img %}
         <div class="w-[1482px] h-[669px] mx-auto">
-            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full">
+            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
         </div>
         {% endfor %}
     </div>

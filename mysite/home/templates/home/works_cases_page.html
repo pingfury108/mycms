@@ -48,12 +48,12 @@
 <section class="">
     <div class="mx-auto lg:w-[1700px]">
         <p class="text-my-blue text-[1.33rem] font-puhui font-medium mt-16">金属品牌创意--国内领先的宣传策划与视觉设计公司</p>
-        <div class="flex flex-wrap gap-2.5 mt-6 w-full">
+        <div class="flex flex-wrap gap-[6px] w-full">
             {% for child_page in pages %}
             <div class="w-[560px]">
                 <a href="{% pageurl child_page %}" class="">
                     <div class="h-[360px] w-[560px]">
-                        {% image child_page.images.first.image original as img %}
+                        {% image child_page.images.first.image width-560 as img %}
                         <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounded">
                     </div>
                     <div class="flex justify-start">

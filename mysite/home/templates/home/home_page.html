@@ -378,7 +378,7 @@
 
 <section class="">
     <div class="mx-auto mt-[80px] flex justify-center items-center lg:w-[1700px] h-[582px]">
-        {% image team_image original as img %}
+        {% image team_image height-582 as img %}
         <img src="{{ img.url }}" class="w-full h-full rounded">
     </div>
 </section>
@@ -388,7 +388,7 @@
 <section class="">
     <div class="mx-auto grid lg:grid-cols-2 gap-2.5 lg:w-[1700px] mt-9">
         {% for new in news %}
-        {% image new.image original as img %}
+        {% image new.image height-290 as img %}
         <div class="w-[840px]">
             <img src=" {{ img.url }}" alt="{{ img.alt }}" class="w-full h-[290px] rounded">
             <div class="mt-7">
