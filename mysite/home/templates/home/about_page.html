@@ -224,14 +224,10 @@
 </section>
 
 <section class="">
-    <div class="mx-auto px-4 lg:w-[1700px]">
-        <div class="grid grid-cols-3 md:grid-cols-7 gap-7 mt-9">
-            {% for logo in logos %}
-            <div class="w-[215px] h-[93px]">
-                {% image logo.image original as img %}
-                <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounde">
-            </div>
-            {% endfor %}
+    <div class="mx-auto lg:w-[1700px]">
+        <div class="w-full mt-9">
+            {% image page.logo_image width-1700 as img %}
+            <img src="{{ img.url }}" alt="{{ img.alt }}" class="w-full h-full rounde">
         </div>
     </div>
 </section>

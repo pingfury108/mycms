@@ -213,16 +213,6 @@ class NewsItemPage(MyPage):
         return context
 
 
-class LogGalleryImage(ClusterableModel):
-    page = ParentalKey("AboutPage", on_delete=models.CASCADE, related_name="logos")
-    image = models.ForeignKey(
-        "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
-    )
-    caption = models.CharField(max_length=250, blank=True)
-
-    panels = [FieldPanel("image"), FieldPanel("caption")]
-
-
 class AboutPage(MyPage):
     class Meta:
         verbose_name = "关于我们"
@@ -237,15 +227,22 @@ class AboutPage(MyPage):
         related_name="+",
     )
 
+    logo_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel("body"),
         FieldPanel("team_image"),
-        InlinePanel("logos", label="Logos"),
+        FieldPanel("logo_image"),
     ]
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["logos"] = LogGalleryImage.objects.all()
 
         return context
 
